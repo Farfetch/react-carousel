@@ -1,0 +1,27 @@
+{
+    "presets": ["@babel/preset-react"],
+    "plugins": [
+        ["@babel/plugin-proposal-object-rest-spread", { "useBuiltIns": true }],
+        ["module-resolver", {
+            "alias": {
+                "#components": "./src/components",
+                "#components/**": "./src/components/**",
+                "#containers": "./src/containers",
+                "#context": "./src/context",
+                "#utils": "./src/utils"
+            }
+        }]
+    ],
+    "env": {
+        "test": {
+            "presets": ["@babel/preset-env"]
+        },
+        "cjs": {
+            "plugins": ["add-module-exports"],
+            "presets": ["@babel/preset-env"]
+        },
+        "es": {
+            "presets": [["@babel/preset-env", { "modules": false }]]
+        }
+    }
+}

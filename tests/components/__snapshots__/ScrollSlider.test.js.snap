@@ -1,0 +1,105 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ScrollSlider /> <ScrollSlider /> - props should render correctly with aditional props 1`] = `
+<div
+  className="slider container dummyClassName"
+  onScroll={[Function]}
+>
+  <div
+    className="slide"
+    key=".$0"
+    style={
+      Object {
+        "width": "50.000000%",
+      }
+    }
+  >
+    First slide
+  </div>
+  <div
+    className="slide"
+    key=".$1"
+    style={
+      Object {
+        "width": "50.000000%",
+      }
+    }
+  >
+    Second slide
+  </div>
+  <div
+    className="slide"
+    key=".$2"
+    style={
+      Object {
+        "width": "50.000000%",
+      }
+    }
+  >
+    Third slide
+  </div>
+  <div
+    className="slide"
+    key=".$3"
+    style={
+      Object {
+        "width": "50.000000%",
+      }
+    }
+  >
+    Fourth slide
+  </div>
+</div>
+`;
+
+exports[`<ScrollSlider /> <ScrollSlider /> - props should render correctly with the required props 1`] = `
+<div
+  className="slider container"
+  onScroll={[Function]}
+>
+  <div
+    className="slide"
+    key=".$0"
+    style={
+      Object {
+        "width": "50.000000%",
+      }
+    }
+  >
+    First slide
+  </div>
+  <div
+    className="slide"
+    key=".$1"
+    style={
+      Object {
+        "width": "50.000000%",
+      }
+    }
+  >
+    Second slide
+  </div>
+  <div
+    className="slide"
+    key=".$2"
+    style={
+      Object {
+        "width": "50.000000%",
+      }
+    }
+  >
+    Third slide
+  </div>
+  <div
+    className="slide"
+    key=".$3"
+    style={
+      Object {
+        "width": "50.000000%",
+      }
+    }
+  >
+    Fourth slide
+  </div>
+</div>
+`;

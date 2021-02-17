@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ScrollSliderContainer/> should render correctly 1`] = `
+<ScrollSlider
+  activeItem={1}
+  goTo={[MockFunction]}
+  isRTL={false}
+  itemsToShow={2}
+  setItemsLength={[MockFunction]}
+>
+  <div />
+</ScrollSlider>
+`;

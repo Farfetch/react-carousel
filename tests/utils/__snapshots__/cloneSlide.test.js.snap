@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`cloneSlide() should return slide element with additional configuration 1`] = `
+<div
+  className="dummyClassName slide"
+  key="0"
+  style={
+    Object {
+      "position": "relative",
+    }
+  }
+>
+  First slide
+</div>
+`;
+
+exports[`cloneSlide() should return slide element with minimum configuration 1`] = `
+<div
+  className="slide"
+  key="null"
+  style={Object {}}
+>
+  First slide
+</div>
+`;
+
+exports[`cloneSlide() should return slide element with new key when it is cloned 1`] = `
+<div
+  className="slide"
+  key="c.1"
+  style={Object {}}
+>
+  First slide
+</div>
+`;

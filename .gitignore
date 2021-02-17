@@ -1,0 +1,15 @@
+node_modules/
+*.log
+coverage/
+
+packages/*/es/
+packages/*/lib/
+packages/*/coverage/
+
+.DS_Store
+.idea
+.vscode/
+package-lock.json
+.vs/
+/es/
+/lib/
