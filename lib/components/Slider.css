@@ -1,0 +1,11 @@
+.slider {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    transition: transform 300ms;
+}
+
+.slide {
+    flex: 0 0 auto;
+}

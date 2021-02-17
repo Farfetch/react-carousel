@@ -1,0 +1,68 @@
+.containerDefault {
+    @apply --zindex-hover;
+    display: flex;
+    justify-content: center;
+}
+
+.containerInfinite {
+    position: relative;
+    width: 9rem;
+    height: 2rem;
+    overflow: hidden;
+    display: inline-block;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+.bullet {
+    position: relative;
+    width: 2.1rem;
+    height: 2.1rem;
+    display: inline-block;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 0.6rem;
+        height: 0.6rem;
+        border-radius: 50%;
+        background-color: var(--colorDarkGrey);
+
+        @apply --position-xy;
+    }
+
+    &.isActive::before {
+        width: 0.8rem;
+        height: 0.8rem;
+        background-color: var(--colorDark);
+    }
+}
+
+.moveInfinite {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 200ms;
+}
+
+.bulletInfinite {
+    position: relative;
+    width: 0.8rem;
+    height: 0.8rem;
+    margin: 0.5rem;
+    transform: scale(0.5);
+    display: inline-block;
+    border-radius: 50%;
+    transition: transform 200ms;
+    background-color: var(--colorDarkGrey);
+
+    &.isActive {
+        transform: scale(1);
+        background-color: var(--colorDark);
+    }
+
+    &.isSecondary {
+        transform: scale(0.75);
+        background-color: var(--colorDarkGrey);
+    }
+}

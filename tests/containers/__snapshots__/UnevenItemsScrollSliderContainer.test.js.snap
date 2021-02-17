@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<UnevenItemsScrollSliderContainer/> should render correctly 1`] = `
+<UnevenItemsScrollSliderContainer>
+  <UnevenItemsScrollSlider
+    activeItem={1}
+    goTo={[MockFunction]}
+    isRTL={false}
+    itemsLength={1}
+    ratioToScroll={1}
+    setItemsLength={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            NaN,
+          ],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      }
+    }
+  >
+    <div
+      className="slider"
+      onScroll={[Function]}
+    >
+      <div
+        className="wrapper"
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+      >
+        <div
+          className="slide"
+          key="null/.0"
+          style={Object {}}
+        />
+      </div>
+    </div>
+  </UnevenItemsScrollSlider>
+</UnevenItemsScrollSliderContainer>
+`;

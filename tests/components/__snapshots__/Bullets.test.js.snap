@@ -1,0 +1,458 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Bullets> - lifecycling for infinite bullets should update secondaryBullets and bullets when newProp.activeItem is not equal to the current one 1`] = `
+<div
+  aria-hidden="true"
+  className="containerInfinite"
+  data-active={1}
+>
+  <div
+    className="moveInfinite"
+    style={
+      Object {
+        "transform": "translate(0rem)",
+      }
+    }
+  >
+    <span
+      className="bulletInfinite isSecondary"
+      data-tstid="bullet"
+      key="0"
+    />
+    <span
+      className="bulletInfinite isActive"
+      data-tstid="bullet"
+      key="1"
+    />
+    <span
+      className="bulletInfinite isSecondary"
+      data-tstid="bullet"
+      key="2"
+    />
+    <span
+      className="bulletInfinite"
+      data-tstid="bullet"
+      key="3"
+    />
+    <span
+      className="bulletInfinite"
+      data-tstid="bullet"
+      key="4"
+    />
+    <span
+      className="bulletInfinite"
+      data-tstid="bullet"
+      key="5"
+    />
+    <span
+      className="bulletInfinite"
+      data-tstid="bullet"
+      key="6"
+    />
+    <span
+      className="bulletInfinite"
+      data-tstid="bullet"
+      key="7"
+    />
+    <span
+      className="bulletInfinite"
+      data-tstid="bullet"
+      key="8"
+    />
+    <span
+      className="bulletInfinite"
+      data-tstid="bullet"
+      key="9"
+    />
+  </div>
+</div>
+`;
+
+exports[`<Bullets> - props for default should render correctly bullets with a custom theme 1`] = `
+<div
+  aria-hidden="true"
+  className="containerDefault container containerDefault"
+  data-active={0}
+>
+  <span
+    className="bullet isActive"
+    data-tstid="bullet"
+    key="0"
+  />
+  <span
+    className="bullet"
+    data-tstid="bullet"
+    key="1"
+  />
+  <span
+    className="bullet"
+    data-tstid="bullet"
+    key="2"
+  />
+</div>
+`;
+
+exports[`<Bullets> - props for default should render correctly the basic 1`] = `
+<div
+  aria-hidden="true"
+  className="containerDefault"
+  data-active={0}
+>
+  <span
+    className="bullet isActive"
+    data-tstid="bullet"
+    key="0"
+  />
+  <span
+    className="bullet"
+    data-tstid="bullet"
+    key="1"
+  />
+  <span
+    className="bullet"
+    data-tstid="bullet"
+    key="2"
+  />
+</div>
+`;
+
+exports[`<Bullets> - props for infinite bullets should render correctly when activeItem is one of the middle with dataTestAttr and a custom theme 1`] = `
+<div
+  aria-hidden="true"
+  className="containerInfinite container containerInfinite"
+  data-active={7}
+  dataTestAttr="infinite"
+>
+  <div
+    className="moveInfinite"
+    style={
+      Object {
+        "transform": "translate(-9rem)",
+      }
+    }
+  >
+    <span
+      className="bulletInfinite"
+      data-tstid="bullet"
+      key="0"
+    />
+    <span
+      className="bulletInfinite"
+      data-tstid="bullet"
+      key="1"
+    />
+    <span
+      className="bulletInfinite"
+      data-tstid="bullet"
+      key="2"
+    />
+    <span
+      className="bulletInfinite"
+      data-tstid="bullet"
+      key="3"
+    />
+    <span
+      className="bulletInfinite"
+      data-tstid="bullet"
+      key="4"
+    />
+    <span
+      className="bulletInfinite"
+      data-tstid="bullet"
+      key="5"
+    />
+    <span
+      className="bulletInfinite isSecondary"
+      data-tstid="bullet"
+      key="6"
+    />
+    <span
+      className="bulletInfinite isActive"
+      data-tstid="bullet"
+      key="7"
+    />
+    <span
+      className="bulletInfinite isSecondary"
+      data-tstid="bullet"
+      key="8"
+    />
+    <span
+      className="bulletInfinite"
+      data-tstid="bullet"
+      key="9"
+    />
+  </div>
+</div>
+`;
+
+exports[`<Bullets> - props for infinite bullets should render correctly when activeItem is the first one 1`] = `
+<div
+  aria-hidden="true"
+  className="containerInfinite"
+  data-active={0}
+>
+  <div
+    className="moveInfinite"
+    style={
+      Object {
+        "transform": "translate(0rem)",
+      }
+    }
+  >
+    <span
+      className="bulletInfinite isActive"
+      data-tstid="bullet"
+      key="0"
+    />
+    <span
+      className="bulletInfinite isSecondary"
+      data-tstid="bullet"
+      key="1"
+    />
+    <span
+      className="bulletInfinite isSecondary"
+      data-tstid="bullet"
+      key="2"
+    />
+    <span
+      className="bulletInfinite"
+      data-tstid="bullet"
+      key="3"
+    />
+    <span
+      className="bulletInfinite"
+      data-tstid="bullet"
+      key="4"
+    />
+    <span
+      className="bulletInfinite"
+      data-tstid="bullet"
+      key="5"
+    />
+    <span
+      className="bulletInfinite"
+      data-tstid="bullet"
+      key="6"
+    />
+    <span
+      className="bulletInfinite"
+      data-tstid="bullet"
+      key="7"
+    />
+    <span
+      className="bulletInfinite"
+      data-tstid="bullet"
+      key="8"
+    />
+    <span
+      className="bulletInfinite"
+      data-tstid="bullet"
+      key="9"
+    />
+  </div>
+</div>
+`;
+
+exports[`<Bullets> - props for infinite bullets should render correctly when activeItem is the last one 1`] = `
+<div
+  aria-hidden="true"
+  className="containerInfinite"
+  data-active={9}
+>
+  <div
+    className="moveInfinite"
+    style={
+      Object {
+        "transform": "translate(-9rem)",
+      }
+    }
+  >
+    <span
+      className="bulletInfinite"
+      data-tstid="bullet"
+      key="0"
+    />
+    <span
+      className="bulletInfinite"
+      data-tstid="bullet"
+      key="1"
+    />
+    <span
+      className="bulletInfinite"
+      data-tstid="bullet"
+      key="2"
+    />
+    <span
+      className="bulletInfinite"
+      data-tstid="bullet"
+      key="3"
+    />
+    <span
+      className="bulletInfinite"
+      data-tstid="bullet"
+      key="4"
+    />
+    <span
+      className="bulletInfinite"
+      data-tstid="bullet"
+      key="5"
+    />
+    <span
+      className="bulletInfinite"
+      data-tstid="bullet"
+      key="6"
+    />
+    <span
+      className="bulletInfinite"
+      data-tstid="bullet"
+      key="7"
+    />
+    <span
+      className="bulletInfinite isSecondary"
+      data-tstid="bullet"
+      key="8"
+    />
+    <span
+      className="bulletInfinite isActive"
+      data-tstid="bullet"
+      key="9"
+    />
+  </div>
+</div>
+`;
+
+exports[`<Bullets> - props for infinite bullets should render correctly when activeItem is the penultimate one 1`] = `
+<div
+  aria-hidden="true"
+  className="containerInfinite"
+  data-active={8}
+>
+  <div
+    className="moveInfinite"
+    style={
+      Object {
+        "transform": "translate(-9rem)",
+      }
+    }
+  >
+    <span
+      className="bulletInfinite"
+      data-tstid="bullet"
+      key="0"
+    />
+    <span
+      className="bulletInfinite"
+      data-tstid="bullet"
+      key="1"
+    />
+    <span
+      className="bulletInfinite"
+      data-tstid="bullet"
+      key="2"
+    />
+    <span
+      className="bulletInfinite"
+      data-tstid="bullet"
+      key="3"
+    />
+    <span
+      className="bulletInfinite"
+      data-tstid="bullet"
+      key="4"
+    />
+    <span
+      className="bulletInfinite"
+      data-tstid="bullet"
+      key="5"
+    />
+    <span
+      className="bulletInfinite"
+      data-tstid="bullet"
+      key="6"
+    />
+    <span
+      className="bulletInfinite isSecondary"
+      data-tstid="bullet"
+      key="7"
+    />
+    <span
+      className="bulletInfinite isActive"
+      data-tstid="bullet"
+      key="8"
+    />
+    <span
+      className="bulletInfinite isSecondary"
+      data-tstid="bullet"
+      key="9"
+    />
+  </div>
+</div>
+`;
+
+exports[`<Bullets> - props for infinite bullets should render correctly when activeItem is the second one 1`] = `
+<div
+  aria-hidden="true"
+  className="containerInfinite"
+  data-active={1}
+>
+  <div
+    className="moveInfinite"
+    style={
+      Object {
+        "transform": "translate(0rem)",
+      }
+    }
+  >
+    <span
+      className="bulletInfinite isSecondary"
+      data-tstid="bullet"
+      key="0"
+    />
+    <span
+      className="bulletInfinite isActive"
+      data-tstid="bullet"
+      key="1"
+    />
+    <span
+      className="bulletInfinite isSecondary"
+      data-tstid="bullet"
+      key="2"
+    />
+    <span
+      className="bulletInfinite"
+      data-tstid="bullet"
+      key="3"
+    />
+    <span
+      className="bulletInfinite"
+      data-tstid="bullet"
+      key="4"
+    />
+    <span
+      className="bulletInfinite"
+      data-tstid="bullet"
+      key="5"
+    />
+    <span
+      className="bulletInfinite"
+      data-tstid="bullet"
+      key="6"
+    />
+    <span
+      className="bulletInfinite"
+      data-tstid="bullet"
+      key="7"
+    />
+    <span
+      className="bulletInfinite"
+      data-tstid="bullet"
+      key="8"
+    />
+    <span
+      className="bulletInfinite"
+      data-tstid="bullet"
+      key="9"
+    />
+  </div>
+</div>
+`;

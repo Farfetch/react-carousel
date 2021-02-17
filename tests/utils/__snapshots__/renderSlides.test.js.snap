@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renderSlides() should return slides array 1`] = `
+Array [
+  <div
+    className="slide"
+    style={
+      Object {
+        "width": "50.000000%",
+      }
+    }
+  >
+    First slide
+  </div>,
+  <div
+    className="slide"
+    style={
+      Object {
+        "width": "50.000000%",
+      }
+    }
+  >
+    Second slide
+  </div>,
+  <div
+    className="slide"
+    style={
+      Object {
+        "width": "50.000000%",
+      }
+    }
+  >
+    Third slide
+  </div>,
+  <div
+    className="slide"
+    style={
+      Object {
+        "width": "50.000000%",
+      }
+    }
+  >
+    Fourth slide
+  </div>,
+]
+`;

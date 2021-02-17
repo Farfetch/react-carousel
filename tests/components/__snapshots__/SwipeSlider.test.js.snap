@@ -1,0 +1,222 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SwipeSlider /> props should add cloned slides and update styles inline when isInfinite 1`] = `
+<div
+  className="slider"
+  direction={null}
+  onTransitionEnd={[Function]}
+  style={
+    Object {
+      "transform": "translate3d(-0%, 0, 0)",
+      "transition": "",
+    }
+  }
+>
+  <div
+    className="slide"
+    key=".$0"
+    style={
+      Object {
+        "width": "50.000000%",
+      }
+    }
+  >
+    First slide
+  </div>
+  <div
+    className="slide"
+    key=".$1"
+    style={
+      Object {
+        "width": "50.000000%",
+      }
+    }
+  >
+    Second slide
+  </div>
+  <div
+    className="slide"
+    key=".$2"
+    style={
+      Object {
+        "width": "50.000000%",
+      }
+    }
+  >
+    Third slide
+  </div>
+  <div
+    className="slide"
+    key=".$3"
+    style={
+      Object {
+        "width": "50.000000%",
+      }
+    }
+  >
+    Fourth slide
+  </div>
+  <div
+    className="slide"
+    key=".$4"
+    style={
+      Object {
+        "width": "50.000000%",
+      }
+    }
+  >
+    Five slide
+  </div>
+  <div
+    className="slide"
+    key=".$5"
+    style={
+      Object {
+        "width": "50.000000%",
+      }
+    }
+  >
+    Sixth slide
+  </div>
+  <div
+    className="slide"
+    key=".$6"
+    style={
+      Object {
+        "width": "50.000000%",
+      }
+    }
+  >
+    Seventh slide
+  </div>
+</div>
+`;
+
+exports[`<SwipeSlider /> props should not add clone slides when have less children than itemsToShow 1`] = `
+<div
+  className="slider"
+  direction={null}
+  onTransitionEnd={[Function]}
+  style={
+    Object {
+      "transform": "translate3d(-0%, 0, 0)",
+      "transition": "",
+    }
+  }
+>
+  <div
+    className="slide"
+    key=".$0"
+    style={
+      Object {
+        "width": "50.000000%",
+      }
+    }
+  >
+    First slide
+  </div>
+  <div
+    className="slide"
+    key=".$1"
+    style={
+      Object {
+        "width": "50.000000%",
+      }
+    }
+  >
+    Second slide
+  </div>
+</div>
+`;
+
+exports[`<SwipeSlider /> props should render correctly the sliders cloned from children elements 1`] = `
+<div
+  className="slider"
+  direction={null}
+  onTransitionEnd={[Function]}
+  style={
+    Object {
+      "transform": "translate3d(-0%, 0, 0)",
+      "transition": "",
+    }
+  }
+>
+  <div
+    className="slide"
+    key=".$0"
+    style={
+      Object {
+        "width": "50.000000%",
+      }
+    }
+  >
+    First slide
+  </div>
+  <div
+    className="slide"
+    key=".$1"
+    style={
+      Object {
+        "width": "50.000000%",
+      }
+    }
+  >
+    Second slide
+  </div>
+  <div
+    className="slide"
+    key=".$2"
+    style={
+      Object {
+        "width": "50.000000%",
+      }
+    }
+  >
+    Third slide
+  </div>
+  <div
+    className="slide"
+    key=".$3"
+    style={
+      Object {
+        "width": "50.000000%",
+      }
+    }
+  >
+    Fourth slide
+  </div>
+  <div
+    className="slide"
+    key=".$4"
+    style={
+      Object {
+        "width": "50.000000%",
+      }
+    }
+  >
+    Five slide
+  </div>
+  <div
+    className="slide"
+    key=".$5"
+    style={
+      Object {
+        "width": "50.000000%",
+      }
+    }
+  >
+    Sixth slide
+  </div>
+  <div
+    className="slide"
+    key=".$6"
+    style={
+      Object {
+        "width": "50.000000%",
+      }
+    }
+  >
+    Seventh slide
+  </div>
+</div>
+`;

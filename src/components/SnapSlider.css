@@ -1,0 +1,13 @@
+.container {
+    scroll-snap-type: x mandatory;
+
+    /* Older spec implementation (for ios9/10) */
+    scroll-snap-destination: 0% 100%;
+    scroll-snap-points-x: repeat(100%);
+
+    -webkit-overflow-scrolling: touch; /* For safari */
+
+    & > * {
+        scroll-snap-align: center;
+    }
+}
