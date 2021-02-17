@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CarouselProvider/> should render with required props 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "activeItem": 0,
+      "direction": null,
+      "goNext": [Function],
+      "goPrev": [Function],
+      "goTo": [Function],
+      "isInfinite": false,
+      "isMovementBlocked": false,
+      "isRTL": false,
+      "itemsLength": 0,
+      "itemsToScroll": 1,
+      "itemsToShow": 1,
+      "setIsMovementBlocked": [Function],
+      "setItemsLength": [Function],
+    }
+  }
+>
+  <mockConstructor />
+</ContextProvider>
+`;

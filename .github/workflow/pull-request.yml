@@ -1,0 +1,73 @@
+name: Pull Request
+
+on:
+    pull_request:
+        branches:
+            - master
+
+jobs:
+    load-modules:
+        name: Load and Cache Dependencies
+        runs-on: ubuntu-18.04
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
+            - name: Load Modules
+              uses: actions/cache@v2
+              with:
+                  path: "**/node_modules"
+                  key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+            - name: Verify Dependencies
+              run: yarn
+              if: steps.cache.outputs.cache-hit != 'true'
+
+    lint:
+        name: Lint Branch
+        needs: [load-modules]
+        runs-on: ubuntu-18.04
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
+            - name: Unshallow
+              run: git fetch --unshallow
+            - name: Restore Modules
+              id: cache
+              uses: actions/cache@v2
+              with:
+                  path: "**/node_modules"
+                  key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+            - name: Lint Code
+              run: yarn lint
+            - name: Lint Commit
+              run: npx commitlint --from=${{github.event.pull_request.base.sha}}
+
+    test:
+        name: Test Branch
+        needs: [load-modules]
+        runs-on: ubuntu-18.04
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
+            - name: Restore Modules
+              uses: actions/cache@v2
+              with:
+                  path: "**/node_modules"
+                  key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+            - name: Test
+              run: yarn test
+
+    build:
+        name: Build Branch
+        needs: [load-modules]
+        runs-on: ubuntu-18.04
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
+            - name: Restore Modules
+              id: cache
+              uses: actions/cache@v2
+              with:
+                  path: "**/node_modules"
+                  key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+            - name: Build
+              run: yarn build

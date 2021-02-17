@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SwipeSliderContainer/> should render correctly 1`] = `
+<SwipeSlider
+  activeItem={1}
+  disableSwipe={false}
+  goNext={[MockFunction]}
+  goPrev={[MockFunction]}
+  hasKeysNavigation={true}
+  isInfinite={false}
+  isRTL={false}
+  itemsToShow={2}
+  setItemsLength={[MockFunction]}
+>
+  <div />
+</SwipeSlider>
+`;

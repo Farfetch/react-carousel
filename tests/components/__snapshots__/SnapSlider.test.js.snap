@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SnapSlider /> should render correctly the scroll version on SSR 1`] = `
+<ScrollSliderContainer
+  className="container"
+  limitScroll={false}
+>
+  <div>
+    Test 1
+  </div>
+  <div>
+    Test 2
+  </div>
+</ScrollSliderContainer>
+`;
+
+exports[`<SnapSlider /> should render the scroll version if has support and is already mounted 1`] = `
+<ScrollSliderContainer
+  className="container"
+  limitScroll={false}
+>
+  <div>
+    Test 1
+  </div>
+  <div>
+    Test 2
+  </div>
+</ScrollSliderContainer>
+`;
+
+exports[`<SnapSlider /> should render the swipe version if has no snap support and is already mounted 1`] = `
+<SwipeSliderContainer
+  disableSwipe={false}
+  hasKeysNavigation={false}
+>
+  <div>
+    Test 1
+  </div>
+  <div>
+    Test 2
+  </div>
+</SwipeSliderContainer>
+`;
