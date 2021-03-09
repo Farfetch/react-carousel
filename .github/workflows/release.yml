@@ -10,7 +10,9 @@ jobs:
         runs-on: ubuntu-18.04
         steps:
             - name: Checkout
-              uses: actions/checkout@v1
+              uses: actions/checkout@v2
+              with: 
+                persist-credentials: false
             - name: Setup Node.js
               uses: actions/setup-node@v1
               with:
@@ -21,5 +23,5 @@ jobs:
               run: yarn build
             - name: Release
               env:
-                  GITHUB_TOKEN: ${{ secrets.GB_WRITE_TOKEN_MANUAL }}
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
               run: npx semantic-release
