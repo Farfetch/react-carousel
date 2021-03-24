@@ -1,3 +1,16 @@
+## 1.0.0 (2021-03-24)
+
+
+### Features
+
+* Create package react-carousel ([61980b5](https://github.com/Farfetch/react-carousel/commit/61980b51f22c5b96f29d53454dc56d1bc07205ae))
+
+
+### Bug Fixes
+
+* fix pipeline workflows ([8daf814](https://github.com/Farfetch/react-carousel/commit/8daf814f7e709f11e6141b0541f1f3f034f49e8e))
+* run pipeline ([61d6c7d](https://github.com/Farfetch/react-carousel/commit/61d6c7d247f006971fe57357a304724de4b99c88))
+
 ## 1.0.0 (2021-03-10)
 
 
