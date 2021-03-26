@@ -5,13 +5,13 @@ A carousel component, with support for Swipe, Scroll and Snap Points.
 ## Installing
 
 ```bash
-$ npm install --save @portal/react-carousel
+$ npm install --save @farfetch/react-carousel
 ```
 
 ...and include it in your project
 
 ```js
-import { Carousel } from '@portal/react-carousel';
+import { Carousel } from '@farfetch/react-carousel';
 ```
 
 ## Screenshots
@@ -22,14 +22,14 @@ import { Carousel } from '@portal/react-carousel';
 
 ## Concepts
 
-The Carousel is fully operated by [`Context`](#CarouselContext), this gives the flexibility to extend it without having to change the core of it, as all the state of the [`Carousel`](#Carousel) is already exposed in the context.
+The Carousel is fully operated by [`Context`](#CarouselContext), this gives the flexibility to extend it without having to change the core, as all the state of the [`Carousel`](#Carousel) is already exposed in the context.
 
-To create a new carousel, you basically need two things: The wrapper ([`Carousel`](#Carousel)),  a movement engine (one of the [sliders](#SwipeSlider)) and optional navigation [components](#Arrow). 
+To create a new carousel, you basically need two things: The wrapper ([`Carousel`](#Carousel)), a movement engine (one of the [sliders](#SwipeSlider)) and optional navigation [components](#Arrow). 
 
-The base structure would looks like this:
+The base structure would look like this:
 
 ```jsx
-import { Carousel, SwipeSlider, Bullets } from '@portal/react-carousel';
+import { Carousel, SwipeSlider, Bullets } from '@farfetch/react-carousel';
 
 /* The mandatory wrapper of the Carousel */
 <Carousel>
@@ -49,7 +49,7 @@ import { Carousel, SwipeSlider, Bullets } from '@portal/react-carousel';
 
 You have full control of what you can put inside the [`Carousel`](#Carousel) wrapper, including divs and others components. 
 
-The wrapper is nothing more than a `<div>` and the instance of the [`CarouselProvider`](#CarouselProvider), so all the children already have access to the Context by default.
+The wrapper is nothing more than a `<div>` and the instance of the [`CarouselProvider`](#CarouselProvider), so all children already have access to the Context by default.
 
 ### Architecture overview
 
@@ -64,7 +64,7 @@ Except for the movement engines, you can mix all the examples to have the more a
 ### SwipeSlider
 
 ```jsx
-import { Carousel, SwipeSlider } from '@portal/react-carousel';
+import { Carousel, SwipeSlider } from '@farfetch/react-carousel';
 
 const handleAfterChange = (e) => {
     console.log(e.index);
@@ -89,7 +89,7 @@ export default MyComponent;
 ### ScrollSlider
 
 ```jsx
-import { Carousel, ScrollSlider } from '@portal/react-carousel';
+import { Carousel, ScrollSlider } from '@farfetch/react-carousel';
 
 const handleAfterChange = (e) => {
     console.log(e.index);
@@ -114,7 +114,7 @@ export default MyComponent;
 ### SnapSlider
 
 ```jsx
-import { Carousel, SnapSlider } from '@portal/react-carousel';
+import { Carousel, SnapSlider } from '@farfetch/react-carousel';
 
 const handleAfterChange = (e) => {
     console.log(e.index);
@@ -139,7 +139,7 @@ export default MyComponent;
 ### With Bullets
 
 ```jsx
-import { Carousel, Bullets, SwipeSlider } from '@portal/react-carousel';
+import { Carousel, Bullets, SwipeSlider } from '@farfetch/react-carousel';
 
 const handleAfterChange = (e) => {
     console.log(e.index);
@@ -166,8 +166,7 @@ export default MyComponent;
 ### With Arrows
 
 ```jsx
-import Button from '@portal/react-button';
-import { Carousel, Bullets, SwipeSlider } from '@portal/react-carousel';
+import { Carousel, Bullets, SwipeSlider } from '@farfetch/react-carousel';
 
 const handleAfterChange = (e) => {
     console.log(e.index);
@@ -189,11 +188,11 @@ const MyComponent = (props) => (
         </SwipeSlider>
         
         <Arrow flow={ "prev" } onClick={ handleArrowClick }>
-            { ({ onClick }) => <Button onClick={ onClick }>Previous</Button> }
+            { ({ onClick }) => <button onClick={ onClick }>Previous</button> }
         </Arrow>
         
         <Arrow flow={ "next" } onClick={ handleArrowClick }>
-            { ({ onClick }) => <Button onClick={ onClick }>Next</Button> }
+            { ({ onClick }) => <button onClick={ onClick }>Next</button> }
         </Arrow>
     </Carousel>
 );
@@ -204,9 +203,8 @@ export default MyComponent;
 ### Complex responsive Carousel
 
 ```jsx
-import { ResponsiveConsumer } from '@portal/react-context-responsive';
-import Button from '@portal/react-button';
-import { Carousel, Bullets, SwipeSlider } from '@portal/react-carousel';
+import { ResponsiveConsumer } from '@farfetch/react-context-responsive';
+import { Carousel, Bullets, SwipeSlider } from '@farfetch/react-carousel';
 
 const handleAfterChange = (e) => {
     console.log(e.index);
@@ -238,11 +236,11 @@ const ResponsiveCarousel = (props) => (
         <Bullets theme={ BulletsTheme } />
         
         <Arrow flow={ "prev" } onClick={ handleArrowClick }>
-            { ({ onClick }) => <Button onClick={ onClick }>Previous</Button> }
+            { ({ onClick }) => <button onClick={ onClick }>Previous</button> }
         </Arrow>
         
         <Arrow flow={ "next" } onClick={ handleArrowClick }>
-            { ({ onClick }) => <Button onClick={ onClick }>Next</Button> }
+            { ({ onClick }) => <button onClick={ onClick }>Next</button> }
         </Arrow>
     </Carousel>
 );
@@ -253,8 +251,7 @@ export default ResponsiveCarousel;
 ### With custom component
 
 ```jsx
-import Button from '@portal/react-button';
-import { Carousel, CarouselContext, Bullets, SwipeSlider } from '@portal/react-carousel';
+import { Carousel, CarouselContext, Bullets, SwipeSlider } from '@farfetch/react-carousel';
 
 const handleAfterChange = (e) => {
     console.log(e.index);
@@ -284,11 +281,11 @@ const MyComponent = (props) => (
         <Pagination />
         
         <Arrow flow={ "prev" } onClick={ handleArrowClick }>
-            { ({ onClick }) => <Button onClick={ onClick }>Previous</Button> }
+            { ({ onClick }) => <button onClick={ onClick }>Previous</button> }
         </Arrow>
         
         <Arrow flow={ "next" } onClick={ handleArrowClick }>
-            { ({ onClick }) => <Button onClick={ onClick }>Next</Button> }
+            { ({ onClick }) => <button onClick={ onClick }>Next</button> }
         </Arrow>
     </Carousel>
 );
@@ -302,7 +299,7 @@ The available components for the Carousel are:
 
 ### <a name="Carousel"></a>Carousel
 
-The wrapper for the entire Carousel, it creates a wrapping `<div>` and a implementation of the [`CarouselProvider`](#CarouselProvider).
+The wrapper for the entire Carousel, it creates a wrapping `<div>` and an implementation of the [`CarouselProvider`](#CarouselProvider).
 
 #### Properties
 
@@ -313,7 +310,7 @@ The wrapper for the entire Carousel, it creates a wrapping `<div>` and a impleme
 | isInfinite        | Bool   | false   | Enables the behaviour to go back to the start/end in the carousel edges                                                                                              |
 | isRTL             | Bool   | false   | Sets the carousel in RTL mode                                                                                                                                        |
 | itemsToShow       | Number | 1       | Number of visible items in the carousel                                                                                                                              |
-| onAfterChange     | Func   |         | Callback for after the change of the active item. Callback object: { index: Number - The new active index, dir: String - The movement direction ('prev' or 'next') } |
+| onAfterChange     | Func   |         | Callback when changing the active item. Callback object: { index: Number - The new active index, dir: String - The movement direction ('prev' or 'next') } |
 | itemsToScroll             | Number   | 1   | The number of items to scroll when using [`Arrow`](#Arrow)      |
 
 It also accepts additional props to be passed to the container.
@@ -461,7 +458,7 @@ It fallback to the [`SwipeSlider`](#SwipeSlider) for browser with no support.
 
 #### Support for navigation components
 
-The ScrollSlider **doesn't** works with the [`Arrow`](#Arrow) component, due to the snap point support.
+The ScrollSlider **doesn't** work with the [`Arrow`](#Arrow) component, due to snap point support.
 
 It supports the [`Bullets`](#Bullets) component.
 
@@ -472,7 +469,7 @@ As the Carousel state is managed by a context, we can easily create new componen
 Example: 
 
 ```jsx
-import { CarouselContext } from '@portal/react-carousel';
+import { CarouselContext } from '@farfetch/react-carousel';
 
 const Pagination = (props) => {
     <CarouselContext.Consumer>
