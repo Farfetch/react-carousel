@@ -4,6 +4,7 @@ module.exports = {
     moduleNameMapper: {
         '\\.(scss|css|svg|jpg|png)$': 'identity-obj-proxy',
     },
+    setupFiles: ['./tests/setup.js'],
     setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
     testEnvironment: 'jsdom',
     transformIgnorePatterns: ['/node_modules/'],
