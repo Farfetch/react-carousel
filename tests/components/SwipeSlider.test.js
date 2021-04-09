@@ -39,8 +39,9 @@ const children = [
 describe('<SwipeSlider /> props', () => {
     it('should render correctly the sliders cloned from children elements', () => {
         const tree = shallow(
-            <SwipeSlider {...mocksPropsSwipeSlider}>{children}</SwipeSlider>
-        ).renderProp('children')();
+            <SwipeSlider {...mocksPropsSwipeSlider}>{children}</SwipeSlider>,
+            { disableLifecycleMethods: false }
+        );
 
         expect(tree.find('.slide')).toHaveLength(children.length);
         expect(tree).toMatchSnapshot();
@@ -50,8 +51,9 @@ describe('<SwipeSlider /> props', () => {
         const tree = shallow(
             <SwipeSlider isInfinite {...mocksPropsSwipeSlider}>
                 {children}
-            </SwipeSlider>
-        ).renderProp('children')();
+            </SwipeSlider>,
+            { disableLifecycleMethods: false }
+        );
 
         expect(tree).toMatchSnapshot();
     });
@@ -65,8 +67,9 @@ describe('<SwipeSlider /> props', () => {
         const tree = shallow(
             <SwipeSlider isInfinite itemsToShow={2} {...mocksPropsSwipeSlider}>
                 {twochildren}
-            </SwipeSlider>
-        ).renderProp('children')();
+            </SwipeSlider>,
+            { disableLifecycleMethods: false }
+        );
 
         expect(tree.find('.slide')).toHaveLength(2);
         expect(tree).toMatchSnapshot();
@@ -81,17 +84,18 @@ describe('<SwipeSlider /> props', () => {
             >
                 {children}
             </SwipeSlider>
-        ).renderProp('children')();
+        );
 
-        expect(tree.hasClass('customSlider')).toBeTruthy();
-        expect(tree.prop('data-foo')).toEqual('bar');
+        expect(tree.children().hasClass('customSlider')).toBeTruthy();
+        expect(tree.children().prop('data-foo')).toEqual('bar');
     });
 
     it('should not add onSwipe listener when props disableSwipe', () => {
         const tree = shallow(
             <SwipeSlider {...mocksPropsSwipeSlider} disableSwipe>
                 {children}
-            </SwipeSlider>
+            </SwipeSlider>,
+            { disableLifecycleMethods: false }
         );
 
         expect(tree.prop('onSwipe')).toBeUndefined();
@@ -101,8 +105,9 @@ describe('<SwipeSlider /> props', () => {
         const tree = shallow(
             <SwipeSlider itemsToShow={8} {...mocksPropsSwipeSlider}>
                 {children}
-            </SwipeSlider>
-        ).renderProp('children')();
+            </SwipeSlider>,
+            { disableLifecycleMethods: false }
+        );
 
         expect(tree.find('.slide')).toHaveLength(children.length);
         expect(tree.prop('onSwipe')).toBeUndefined();
@@ -129,7 +134,8 @@ describe('<SwipeSlider/> state', () => {
     it('should have correct values when active item changed', () => {
         const spyOnSetState = jest.spyOn(SwipeSlider.prototype, 'setState');
         const tree = shallow(
-            <SwipeSlider {...mocksPropsSwipeSlider}>{children}</SwipeSlider>
+            <SwipeSlider {...mocksPropsSwipeSlider}>{children}</SwipeSlider>,
+            { disableLifecycleMethods: false }
         );
 
         tree.setProps({
@@ -513,96 +519,50 @@ describe('<SwipeSlider/> keys Navigation', () => {
     });
 });
 
-describe('<Slider /> interaction - onSwipe()', () => {
-    const onSwipe = (tree, dir) =>
-        tree.find('SwipeEvents').props().onSwipe(dir);
+describe('<Slider /> interaction - onSwipe', () => {
+    const onSwipeRight = (tree) =>
+        tree.find('reactSwipeEvents').props().onSwipedRight();
 
-    const assertSwipeTransformX = (tree, xValue) =>
-        expect(tree.prop('style').transform).toBe(
-            `translate3d(${xValue}, 0, 0)`
-        );
+    const onSwipeLeft = (tree) =>
+        tree.find('reactSwipeEvents').props().onSwipedLeft();
 
-    it('should do nothing when onSwipe(dir), dir is not "left" or "right"', () => {
-        const spySetState = jest.spyOn(SwipeSlider.prototype, 'setState');
-        const spyHandleSwipe = jest.spyOn(
-            SwipeSlider.prototype,
-            '_handleSwipe'
-        );
+    it('should go to next slide onSwipeLeft() and call goNext', () => {
         const tree = shallow(
             <SwipeSlider {...mocksPropsSwipeSlider} isInfinite>
                 {children}
-            </SwipeSlider>
+            </SwipeSlider>,
+            { disableLifecycleMethods: false }
         );
 
-        onSwipe(tree, 'top');
-        expect(spySetState).not.toHaveBeenCalled();
-        expect(spyHandleSwipe).toHaveReturnedWith(false);
-    });
-
-    it('should go to next slide onSwipe("left") and call goNext', () => {
-        const tree = shallow(
-            <SwipeSlider {...mocksPropsSwipeSlider} isInfinite>
-                {children}
-            </SwipeSlider>
-        );
-        const divEl = tree.renderProp('children');
-
-        assertSwipeTransformX(divEl(), '-0%');
-
-        onSwipe(tree, 'left');
-
-        expect(tree.state('transitionResetType')).toBeFalsy();
+        onSwipeLeft(tree);
         expect(mocksPropsSwipeSlider.goNext).toHaveBeenCalledTimes(1);
-
-        // To pretend to have passed an item
-        tree.setProps({
-            activeItem: 1,
-        });
-        assertSwipeTransformX(divEl(), '-50%');
     });
 
-    it('should go to prev slide onSwipe("right") correctly and call goPrev', () => {
+    it('should go to prev slide onSwipeRight() correctly and call goPrev', () => {
         const tree = shallow(
             <SwipeSlider {...mocksPropsSwipeSlider} activeItem={3} isInfinite>
                 {children}
-            </SwipeSlider>
+            </SwipeSlider>,
+            { disableLifecycleMethods: false }
         );
 
-        const divEl = tree.renderProp('children');
-
-        assertSwipeTransformX(divEl(), '-150%');
-        onSwipe(tree, 'right');
-        expect(tree.state('transitionResetType')).toBeFalsy();
+        onSwipeRight(tree);
         expect(mocksPropsSwipeSlider.goPrev).toHaveBeenCalledTimes(1);
-
-        tree.setProps({
-            activeItem: 2,
-        });
-        assertSwipeTransformX(divEl(), '-100%');
     });
 
-    it('should go to next slide onSwipe("right") correctly - RTL', () => {
+    it('should go to next slide onSwipeRight() correctly - RTL', () => {
         const tree = shallow(
             <SwipeSlider {...mocksPropsSwipeSlider} isRTL isInfinite>
                 {children}
-            </SwipeSlider>
+            </SwipeSlider>,
+            { disableLifecycleMethods: false }
         );
-        const divEl = tree.renderProp('children');
 
-        assertSwipeTransformX(divEl(), '0%');
-
-        onSwipe(tree, 'right');
-
-        tree.setProps({
-            activeItem: 1,
-        });
-
-        expect(tree.state('transitionResetType')).toBeFalsy();
+        onSwipeRight(tree);
         expect(mocksPropsSwipeSlider.goNext).toHaveBeenCalledTimes(1);
-        assertSwipeTransformX(divEl(), '50%');
     });
 
-    it('should go to prev slide onSwipe("left") correctly - RTL', () => {
+    it('should go to prev slide onSwipeRight() correctly - RTL', () => {
         const tree = shallow(
             <SwipeSlider
                 {...mocksPropsSwipeSlider}
@@ -611,21 +571,11 @@ describe('<Slider /> interaction - onSwipe()', () => {
                 isInfinite
             >
                 {children}
-            </SwipeSlider>
+            </SwipeSlider>,
+            { disableLifecycleMethods: false }
         );
-        const divEl = tree.renderProp('children');
 
-        assertSwipeTransformX(divEl(), '100%');
-
-        onSwipe(tree, 'left');
-
-        expect(tree.state('transitionResetType')).toBeFalsy();
+        onSwipeLeft(tree);
         expect(mocksPropsSwipeSlider.goPrev).toHaveBeenCalledTimes(1);
-
-        tree.setProps({
-            activeItem: 3,
-        });
-
-        assertSwipeTransformX(divEl(), '150%');
     });
 });

@@ -1,9 +1,9 @@
-import { cloneSlide, renderSlides } from "#utils";
-import PropTypes from "prop-types";
-import React, { Children, Component } from "react";
-import Styles from "./Slider.css";
-import cx from "classnames";
-import ReactSwipeEvents from "react-swipe-events";
+import { cloneSlide, renderSlides } from '#utils';
+import PropTypes from 'prop-types';
+import React, { Children, Component } from 'react';
+import ReactSwipeEvents from 'react-swipe-events';
+import Styles from './Slider.css';
+import cx from 'classnames';
 
 const LEFT_KEY_CODE = 37;
 const RIGHT_KEY_CODE = 39;
@@ -33,21 +33,21 @@ class SwipeSlider extends Component {
             const newActiveItem = props.activeItem;
 
             const isMovingToBeginning =
-                direction === "next" && newActiveItem === 0;
+                direction === 'next' && newActiveItem === 0;
             const isMovingToEnd =
-                direction === "prev" && previousActiveItem === 0;
+                direction === 'prev' && previousActiveItem === 0;
 
             if (isMovingToBeginning) {
                 props.setIsMovementBlocked(true);
                 activeItemData = {
-                    transitionResetType: "last-to-first",
+                    transitionResetType: 'last-to-first',
                     activeItem: itemsLength,
                 };
             }
 
             if (isMovingToEnd) {
                 activeItemData = {
-                    transitionResetType: "first-to-last",
+                    transitionResetType: 'first-to-last',
                     isFakeTransition: true,
                     activeItem: itemsLength,
                 };
@@ -111,7 +111,7 @@ class SwipeSlider extends Component {
 
     componentWillUnmount() {
         this.props.hasKeysNavigation &&
-            document.removeEventListener("keyup", this._listenKeys);
+            document.removeEventListener('keyup', this._listenKeys);
     }
 
     render() {
@@ -137,9 +137,9 @@ class SwipeSlider extends Component {
             disableSwipe || !hasEnoughChildren
                 ? {}
                 : {
-                    onSwipedRight: this._handleSwipeRight,
-                    onSwipedLeft: this._handleSwipeLeft,
-                };
+                      onSwipedRight: this._handleSwipeRight,
+                      onSwipedLeft: this._handleSwipeLeft,
+                  };
 
         return (
             <ReactSwipeEvents {...onSwiping}>
@@ -182,23 +182,24 @@ class SwipeSlider extends Component {
     sliderInfinityStyles() {
         const { itemsToShow } = this.props;
         const { activeItem } = this.state;
-        const unitAbs = this.props.isRTL ? "" : "-";
+        const unitAbs = this.props.isRTL ? '' : '-';
 
         return {
-            transform: `translate3d(${unitAbs}${activeItem * (100 / itemsToShow)
-                }%, 0, 0)`,
-            transition: this.state.isFakeTransition ? "none" : "",
+            transform: `translate3d(${unitAbs}${
+                activeItem * (100 / itemsToShow)
+            }%, 0, 0)`,
+            transition: this.state.isFakeTransition ? 'none' : '',
         };
     }
 
     addKeyUpListener() {
         if (this.state.hasEnoughChildren) {
-            document.addEventListener("keyup", this._listenKeys);
+            document.addEventListener('keyup', this._listenKeys);
         }
     }
 
     removeKeyUpListener() {
-        document.removeEventListener("keyup", this._listenKeys);
+        document.removeEventListener('keyup', this._listenKeys);
     }
 
     _listenKeys(e) {
@@ -222,7 +223,7 @@ class SwipeSlider extends Component {
         const { isInfinite } = this.props;
         const { transitionResetType } = this.state;
 
-        if (isInfinite && transitionResetType === "last-to-first") {
+        if (isInfinite && transitionResetType === 'last-to-first') {
             this.setState({
                 activeItem: 0,
                 isFakeTransition: true,
@@ -231,20 +232,20 @@ class SwipeSlider extends Component {
     }
 
     _handleSwipeLeft() {
-        let methodToCall = "goNext";
+        let methodToCall = 'goNext';
 
         if (this.props.isRTL) {
-            methodToCall = "goPrev";
+            methodToCall = 'goPrev';
         }
 
         return this.props[methodToCall]();
     }
 
     _handleSwipeRight() {
-        let methodToCall = "goPrev";
+        let methodToCall = 'goPrev';
 
         if (this.props.isRTL) {
-            methodToCall = "goNext";
+            methodToCall = 'goNext';
         }
 
         return this.props[methodToCall]();
