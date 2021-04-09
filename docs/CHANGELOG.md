@@ -1,3 +1,5 @@
+### [1.0.1](https://github.com/Farfetch/react-carousel/compare/v1.0.0...v1.0.1) (2021-04-09)
+
 ## 1.0.0 (2021-03-24)
 
 
