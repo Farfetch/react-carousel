@@ -1,6 +1,6 @@
 {
   "name": "@farfetch/react-carousel",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A carousel component, with support for Swipe, Scroll and Snap Points",
   "license": "MIT",
   "keywords": [
