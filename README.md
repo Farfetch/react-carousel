@@ -1,4 +1,5 @@
-# react-carousel
+# react-carousel &middot; [![license](https://img.shields.io/github/license/Farfetch/react-carousel)](LICENSE) ![build](https://github.com/Farfetch/React-Carousel/workflows/Publish%20react-carousel/badge.svg)
+
 
 A carousel component, with support for Swipe, Scroll and Snap Points.
 
