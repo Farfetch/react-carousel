@@ -1,3 +1,10 @@
+## [1.1.0](https://github.com/Farfetch/react-carousel/compare/v1.0.3...v1.1.0) (2021-05-21)
+
+
+### Features
+
+* disable cd and enable manual deploys ([da17681](https://github.com/Farfetch/react-carousel/commit/da176814bde4ac4eff2b73e6a0990be2d048c397))
+
 ### [1.0.3](https://github.com/Farfetch/react-carousel/compare/v1.0.2...v1.0.3) (2021-05-20)
 
 ### [1.0.2](https://github.com/Farfetch/react-carousel/compare/v1.0.1...v1.0.2) (2021-04-15)
