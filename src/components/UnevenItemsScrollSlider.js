@@ -2,9 +2,6 @@ import { animateScroll, infiniteScroll, renderSlides } from '#utils';
 import PropTypes from 'prop-types';
 import React, { useCallback, useEffect, useRef } from 'react';
 import ResizeObserver from 'resize-observer-polyfill';
-import ScrollStyle from './ScrollSlider.css';
-import Styles from './Slider.css';
-import UnevenStyles from './UnevenItemsScrollSlider.css';
 import cx from 'classnames';
 import debounce from 'lodash/debounce';
 import throttle from 'lodash/throttle';
@@ -296,16 +293,16 @@ const UnevenItemsScrollSlider = (props) => {
     return (
         <div
             ref={containerRef}
-            className={cx(Styles.slider, className, {
-                [ScrollStyle.container]: !isInfinite,
-                [UnevenStyles.container]: isInfinite,
+            className={cx('slider', className, {
+                scrollSliderContainer: !isInfinite,
+                unevenItemsContainer: isInfinite,
             })}
             onScroll={handleScroll}
             {...otherProps}
         >
             <div
                 ref={wrapperRef}
-                className={UnevenStyles.wrapper}
+                className="unevenItemsWrapper"
                 {...handleSwipe}
             >
                 {renderSlides(children)}

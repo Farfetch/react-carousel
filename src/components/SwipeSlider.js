@@ -2,7 +2,6 @@ import { cloneSlide, renderSlides } from '#utils';
 import PropTypes from 'prop-types';
 import React, { Children, Component } from 'react';
 import ReactSwipeEvents from 'react-swipe-events';
-import Styles from './Slider.css';
 import cx from 'classnames';
 
 const LEFT_KEY_CODE = 37;
@@ -144,7 +143,7 @@ class SwipeSlider extends Component {
         return (
             <ReactSwipeEvents {...onSwiping}>
                 <div
-                    className={cx(Styles.slider, className)}
+                    className={cx('slider', className)}
                     style={this.sliderInfinityStyles()}
                     onTransitionEnd={this._handleTransitionEnd}
                     {...otherProps}

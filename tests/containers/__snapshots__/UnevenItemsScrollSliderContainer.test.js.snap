@@ -25,11 +25,11 @@ exports[`<UnevenItemsScrollSliderContainer/> should render correctly 1`] = `
     }
   >
     <div
-      className="slider"
+      className="slider scrollSliderContainer"
       onScroll={[Function]}
     >
       <div
-        className="wrapper"
+        className="unevenItemsWrapper"
         onTouchEnd={[Function]}
         onTouchMove={[Function]}
         onTouchStart={[Function]}

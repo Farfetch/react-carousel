@@ -1,0 +1,139 @@
+/* Bullets */
+
+.bullet {
+    position: relative;
+    width: 2.1rem;
+    height: 2.1rem;
+    display: inline-block;
+}
+
+.bullet::before {
+    content: '';
+    position: absolute;
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 50%;
+    background-color: #b6b6b6;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.bullet.isActive::before {
+    width: 0.8rem;
+    height: 0.8rem;
+    background-color: #222222;
+}
+
+.bulletContainerDefault {
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+}
+
+.bulletContainerInfinite {
+    position: relative;
+    width: 9rem;
+    height: 2rem;
+    overflow: hidden;
+    display: inline-block;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+.bulletMoveInfinite {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 200ms;
+}
+
+.bulletInfinite {
+    position: relative;
+    width: 0.8rem;
+    height: 0.8rem;
+    margin: 0.5rem;
+    transform: scale(0.5);
+    display: inline-block;
+    border-radius: 50%;
+    transition: transform 200ms;
+    background-color: #b6b6b6;
+}
+
+.bulletInfinite.isActive {
+    transform: scale(1);
+    background-color: #222222;
+}
+
+.bulletInfinite.isSecondary {
+    transform: scale(0.75);
+    background-color: #b6b6b6;
+}
+
+/* Wrapper */
+
+.wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    touch-action: manipulation;
+}
+
+/* ScrollSlider */
+.scrollSliderContainer {
+    overflow-x: scroll;
+    overflow-y: hidden;
+
+    /* Hide scrollbar on Firefox */
+    scrollbar-width: none;
+
+    /* Hide scrollbar on IE */
+    -ms-overflow-style: none;
+}
+
+/* Hide scrollbar on Chrome and Safari */
+.scrollSliderContainer::-webkit-scrollbar {
+    width: 0;
+    display: none;
+}
+
+/* Slider */
+.slider {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    transition: transform 300ms;
+}
+
+.slide {
+    flex: 0 0 auto;
+}
+
+/* SnapSlider */
+.snapSliderContainer {
+    scroll-snap-type: x mandatory;
+
+    /* Older spec implementation (for ios9/10) */
+    scroll-snap-destination: 0% 100%;
+    scroll-snap-points-x: repeat(100%);
+
+    -webkit-overflow-scrolling: touch; /* For safari */
+}
+
+.snapSliderContainer > * {
+    scroll-snap-align: center;
+}
+
+/* UnevenItemsScrollSlider */
+.unevenItemsContainer {
+    overflow: hidden;
+}
+
+.unevenItemsWrapper {
+    position: relative;
+    width: auto;
+    display: flex;
+    flex: 0 0 auto;
+    touch-action: none;
+}

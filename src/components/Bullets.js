@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
-import Styles from './Bullets.css';
 import cx from 'classnames';
 
 class Bullets extends PureComponent {
@@ -53,7 +52,7 @@ class Bullets extends PureComponent {
             >
                 {isInfinite ? (
                     <div
-                        className={Styles.moveInfinite}
+                        className="bulletMoveInfinite"
                         style={{
                             transform: `translate(${this.getTranslationValue()}rem)`,
                         }}
@@ -80,12 +79,8 @@ class Bullets extends PureComponent {
     }
 
     getTranslationValue() {
-        const {
-            translationValue,
-            maxBullets,
-            bullets,
-            activeBullet,
-        } = this.state;
+        const { translationValue, maxBullets, bullets, activeBullet } =
+            this.state;
 
         // If active slide is in first, second or third position translation doesn't happen
         if (bullets <= maxBullets || activeBullet <= 2) {
@@ -107,17 +102,17 @@ class Bullets extends PureComponent {
         const itemsNodes = [];
 
         const getCxInfinite = (index) =>
-            cx(Styles.bulletInfinite, {
-                [Styles.isActive]: activeBullet === index,
-                [Styles.isSecondary]:
+            cx('bulletInfinite', {
+                isActive: activeBullet === index,
+                isSecondary:
                     secondaryBullets.first === index ||
                     secondaryBullets.second === index,
                 [theme.isActive]: theme.isActive && activeItem === index,
             });
 
         const getCxDefault = (index) =>
-            cx(Styles.bullet, {
-                [Styles.isActive]: activeBullet === index,
+            cx('bullet', {
+                isActive: activeBullet === index,
                 [theme.isActive]: theme.isActive && activeItem === index,
             });
 
@@ -145,13 +140,13 @@ class Bullets extends PureComponent {
         };
 
         if (isInfinite) {
-            return cx(Styles.containerInfinite, {
+            return cx('bulletContainerInfinite', {
                 ...baseThemeClasses,
                 [theme.containerInfinite]: !!theme.containerInfinite,
             });
         }
 
-        return cx(Styles.containerDefault, {
+        return cx('bulletContainerDefault', {
             ...baseThemeClasses,
             [theme.containerDefault]: !!theme.containerDefault,
         });
