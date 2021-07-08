@@ -15,6 +15,14 @@ $ npm install --save @farfetch/react-carousel
 import { Carousel } from '@farfetch/react-carousel';
 ```
 
+We also include css styles out-of-the-box, to use them just import the css by doing the following:
+
+```js
+import '@farfetch/react-carousel/styles.css'
+```
+
+If you want to style the carousel by yourself, ignore this step.
+
 ## Screenshots
 ![Example](docs/example.png)
 

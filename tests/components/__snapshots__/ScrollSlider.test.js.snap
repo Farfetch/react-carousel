@@ -2,7 +2,7 @@
 
 exports[`<ScrollSlider /> <ScrollSlider /> - props should render correctly with aditional props 1`] = `
 <div
-  className="slider container dummyClassName"
+  className="slider scrollSliderContainer dummyClassName"
   onScroll={[Function]}
 >
   <div
@@ -54,7 +54,7 @@ exports[`<ScrollSlider /> <ScrollSlider /> - props should render correctly with 
 
 exports[`<ScrollSlider /> <ScrollSlider /> - props should render correctly with the required props 1`] = `
 <div
-  className="slider container"
+  className="slider scrollSliderContainer"
   onScroll={[Function]}
 >
   <div

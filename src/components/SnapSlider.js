@@ -2,7 +2,6 @@ import { ScrollSlider, SwipeSlider } from '#containers';
 import { checkSnapSupport } from '#utils';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import SnapStyles from './SnapSlider.css';
 import cx from 'classnames';
 
 class SnapSlider extends Component {
@@ -26,7 +25,7 @@ class SnapSlider extends Component {
             return (
                 <ScrollSlider
                     {...this.props}
-                    className={cx(this.props.className, SnapStyles.container)}
+                    className={cx(this.props.className, 'snapSliderContainer')}
                 />
             );
         }

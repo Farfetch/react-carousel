@@ -101,6 +101,6 @@ describe('<SnapSlider />', () => {
         );
 
         expect(wrapper.prop('data-tst')).toBe('test-id');
-        expect(wrapper.prop('className')).toBe('TestTheme container');
+        expect(wrapper.prop('className')).toBe('TestTheme snapSliderContainer');
     });
 });
