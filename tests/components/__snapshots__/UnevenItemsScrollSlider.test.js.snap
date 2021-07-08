@@ -2,11 +2,11 @@
 
 exports[`<UnevenItemsScrollSlider /> <UnevenItemsScrollSlider /> - props should render correctly with additional props 1`] = `
 <div
-  className="slider dummyClassName"
+  className="slider dummyClassName scrollSliderContainer"
   onScroll={[Function]}
 >
   <div
-    className="wrapper"
+    className="unevenItemsWrapper"
     onTouchEnd={[Function]}
     onTouchMove={[Function]}
     onTouchStart={[Function]}
@@ -45,11 +45,11 @@ exports[`<UnevenItemsScrollSlider /> <UnevenItemsScrollSlider /> - props should 
 
 exports[`<UnevenItemsScrollSlider /> <UnevenItemsScrollSlider /> - props should render correctly with the required props 1`] = `
 <div
-  className="slider"
+  className="slider scrollSliderContainer"
   onScroll={[Function]}
 >
   <div
-    className="wrapper"
+    className="unevenItemsWrapper"
     onTouchEnd={[Function]}
     onTouchMove={[Function]}
     onTouchStart={[Function]}

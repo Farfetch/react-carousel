@@ -1,8 +1,6 @@
 import { animateScroll, renderSlides } from '#utils';
 import PropTypes from 'prop-types';
 import React, { Children, Component, createRef } from 'react';
-import ScrollStyles from './ScrollSlider.css';
-import Styles from './Slider.css';
 import cx from 'classnames';
 import debounce from 'lodash/debounce';
 
@@ -55,7 +53,7 @@ class ScrollSlider extends Component {
         return (
             <div
                 ref={this.containerRef}
-                className={cx(Styles.slider, ScrollStyles.container, className)}
+                className={cx('slider', 'scrollSliderContainer', className)}
                 onScroll={this._handleScroll}
                 {...othersProps}
             >

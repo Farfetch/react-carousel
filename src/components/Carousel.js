@@ -1,7 +1,6 @@
 import { CarouselProvider } from '#context';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import Styles from './Carousel.css';
 import cx from 'classnames';
 
 class Carousel extends Component {
@@ -29,10 +28,7 @@ class Carousel extends Component {
 
         return (
             <CarouselProvider {...providerProps}>
-                <div
-                    className={cx(Styles.container, className)}
-                    {...otherProps}
-                >
+                <div className={cx('wrapper', className)} {...otherProps}>
                     {children}
                 </div>
             </CarouselProvider>

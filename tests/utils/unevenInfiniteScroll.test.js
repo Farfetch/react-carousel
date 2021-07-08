@@ -52,8 +52,8 @@ const mockProps = {
 describe('unevenInfiniteScroll', () => {
     const wrapper = mount(<UnevenItemsScrollSlider {...mockProps} />);
 
-    const containerElement = wrapper.find('.container');
-    const wrapperElement = containerElement.find('.wrapper');
+    const containerElement = wrapper.find('.unevenItemsContainer');
+    const wrapperElement = containerElement.find('.unevenItemsWrapper');
     const nodes = wrapperElement.find('.slide');
 
     containerElement.getDOMNode().offsetWidth = 600;

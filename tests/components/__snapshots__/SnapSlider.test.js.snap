@@ -2,7 +2,7 @@
 
 exports[`<SnapSlider /> should render correctly the scroll version on SSR 1`] = `
 <ScrollSliderContainer
-  className="container"
+  className="snapSliderContainer"
   limitScroll={false}
 >
   <div>
@@ -16,7 +16,7 @@ exports[`<SnapSlider /> should render correctly the scroll version on SSR 1`] = 
 
 exports[`<SnapSlider /> should render the scroll version if has support and is already mounted 1`] = `
 <ScrollSliderContainer
-  className="container"
+  className="snapSliderContainer"
   limitScroll={false}
 >
   <div>
