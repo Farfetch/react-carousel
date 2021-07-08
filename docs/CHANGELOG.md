@@ -1,3 +1,10 @@
+## [1.2.0-beta.1](https://github.com/Farfetch/react-carousel/compare/v1.1.0...v1.2.0-beta.1) (2021-07-08)
+
+
+### Features
+
+* decouple styles from implementation ([a25920f](https://github.com/Farfetch/react-carousel/commit/a25920f0bf72e305a1a6e700c1b3fa4a867f6c5c))
+
 ## [1.1.0](https://github.com/Farfetch/react-carousel/compare/v1.0.3...v1.1.0) (2021-05-21)
 
 
