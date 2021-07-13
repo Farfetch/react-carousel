@@ -1,5 +1,5 @@
-import { ScrollSlider, SwipeSlider } from '#containers';
-import { checkSnapSupport } from '#utils';
+import { ScrollSlider } from '#containers';
+import { quad } from '#utils';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import cx from 'classnames';
@@ -13,43 +13,26 @@ class SnapSlider extends Component {
         };
     }
 
-    componentDidMount() {
-        /* eslint-disable-next-line react/no-did-mount-set-state */
-        this.setState({
-            isMounted: true,
-        });
-    }
-
     render() {
-        if (!this.state.isMounted || checkSnapSupport()) {
-            return (
-                <ScrollSlider
-                    {...this.props}
-                    className={cx(this.props.className, 'snapSliderContainer')}
-                />
-            );
-        }
-
-        const { limitScroll, ...otherProps } = this.props;
-
         return (
-            <SwipeSlider
-                {...otherProps}
-                disableSwipe={false}
-                hasKeysNavigation={false}
+            <ScrollSlider
+                {...this.props}
+                className={cx(this.props.className, 'snapSliderContainer')}
             />
         );
     }
 }
 
 SnapSlider.defaultProps = {
-    limitScroll: false,
+    animationDuration: 0.3,
+    animationTimingFunction: quad,
 };
 
 SnapSlider.propTypes = {
     children: PropTypes.node.isRequired,
     className: PropTypes.string,
-    limitScroll: PropTypes.bool,
+    animationDuration: PropTypes.number,
+    animationTimingFunction: PropTypes.func,
 };
 
 export default SnapSlider;

@@ -1,4 +1,5 @@
 export { default as Arrow } from './Arrow';
+export { default as BaseArrow } from './BaseArrow';
 export { default as Bullets } from './Bullets';
 export { default as Carousel } from './Carousel';
 export { default as ScrollSlider } from './ScrollSlider';

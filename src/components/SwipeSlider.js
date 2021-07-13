@@ -143,7 +143,7 @@ class SwipeSlider extends Component {
         return (
             <ReactSwipeEvents {...onSwiping}>
                 <div
-                    className={cx('slider', className)}
+                    className={cx('slider', 'swipeSliderContainer', className)}
                     style={this.sliderInfinityStyles()}
                     onTransitionEnd={this._handleTransitionEnd}
                     {...otherProps}
