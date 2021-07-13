@@ -1,4 +1,4 @@
-import { animateScroll, renderSlides } from '#utils';
+import { animateScroll, quad, renderSlides } from '#utils';
 import PropTypes from 'prop-types';
 import React, { Children, Component, createRef } from 'react';
 import cx from 'classnames';
@@ -34,7 +34,6 @@ class ScrollSlider extends Component {
             goTo,
             isRTL,
             itemsToShow,
-            limitScroll,
             setItemsLength,
             ...othersProps
         } = this.props;
@@ -63,6 +62,7 @@ class ScrollSlider extends Component {
     }
 
     _moveToItem() {
+        const { animationDuration, animationTimingFunction } = this.props;
         const el = this.containerRef.current;
 
         if (!el) {
@@ -77,29 +77,15 @@ class ScrollSlider extends Component {
             : activeItem;
         const finalPosition = (offsetWidth / itemsToShow) * itemToMoveTo;
 
-        animateScroll(el, finalPosition, 0.3, () => {
-            this.shouldMoveToItem = false;
-        });
-    }
-
-    /* Don't work on Chrome, but work on iOS */
-    _forceScrollSnapStop(newPosition, newIndex) {
-        const el = this.containerRef.current;
-
-        if (!el) {
-            return null;
-        }
-
-        el.scrollLeft = newPosition;
-        this.isPreventingScroll = true;
-        el.style.overflow = 'hidden';
-
-        setTimeout(() => {
-            this.isPreventingScroll = false;
-            el.style.overflow = '';
-        }, 80);
-
-        this.props.goTo(newIndex);
+        animateScroll(
+            el,
+            finalPosition,
+            animationDuration,
+            animationTimingFunction,
+            () => {
+                this.shouldMoveToItem = false;
+            }
+        );
     }
 
     _verifyActiveItem() {
@@ -135,28 +121,14 @@ class ScrollSlider extends Component {
             return null;
         }
 
-        const { limitScroll, itemsToShow } = this.props;
-
-        if (limitScroll) {
-            const { offsetWidth, scrollLeft } = this.containerRef.current;
-
-            // When scrolling too fast, we want to prevent scrolling 2 slides at once...
-            const newPrevIndex = this.activeItem - 1;
-            const newNextIndex = this.activeItem + 1;
-            const limitScrollNext = (offsetWidth / itemsToShow) * newNextIndex;
-            const limitScrollPrev = (offsetWidth / itemsToShow) * newPrevIndex;
-
-            // ...so, we need to force a scroll stop limit position when that happens ...
-            if (scrollLeft > limitScrollNext) {
-                return this._forceScrollSnapStop(limitScrollNext, newNextIndex);
-            } else if (scrollLeft < limitScrollPrev) {
-                return this._forceScrollSnapStop(limitScrollPrev, newPrevIndex);
-            }
-        }
-
         this._verifyActiveItemDebounce();
     }
 }
+
+ScrollSlider.defaultProps = {
+    animationDuration: 0.3,
+    animationTimingFunction: quad,
+};
 
 ScrollSlider.propTypes = {
     activeItem: PropTypes.number.isRequired,
@@ -166,7 +138,8 @@ ScrollSlider.propTypes = {
     itemsToShow: PropTypes.number.isRequired,
     setItemsLength: PropTypes.func.isRequired,
     goTo: PropTypes.func.isRequired,
-    limitScroll: PropTypes.bool,
+    animationDuration: PropTypes.number,
+    animationTimingFunction: PropTypes.func,
 };
 
 export default ScrollSlider;

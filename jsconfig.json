@@ -12,6 +12,7 @@
     },
     "include": ["./src/**/*"],
     "exclude": [
+        "stories",
         "node_modules",
         "es",
         "lib"

@@ -1,5 +1,3 @@
-import easeInOutQuad from './easeInOutQuad';
-
 const animate = (callbackObj, durationInSec) => {
     const durationInMs = durationInSec * 1000 || 1000;
     let startTime = 0;
@@ -39,6 +37,7 @@ export const animateScroll = (
     el,
     finalPosition,
     transitionDuration,
+    timingFunction,
     onDone
 ) => {
     const startPosition = el.scrollLeft;
@@ -47,21 +46,20 @@ export const animateScroll = (
     const callback = {
         progress: (percentage) => {
             const animationPosition =
-                startPosition + easeInOutQuad(percentage) * diffPosition;
-            if (el.scroll) {
-                el.scroll(animationPosition, 0);
-            } else {
-                // IE/Edge do not support scroll() or scrollTo()
-                el.scrollLeft = animationPosition;
-            }
+                startPosition + timingFunction(percentage) * diffPosition;
+            el.scroll({
+                left: animationPosition,
+                top: 0,
+                behavior: 'smooth',
+            });
         },
         done: () => {
-            if (el.scroll) {
-                el.scroll(startPosition + diffPosition, 0);
-            } else {
-                // IE/Edge do not support scroll() or scrollTo()
-                el.scrollLeft = startPosition + diffPosition;
-            }
+            el.scroll({
+                left: startPosition + diffPosition,
+                top: 0,
+                behavior: 'smooth',
+            });
+
             if (typeof onDone === 'function') {
                 onDone();
             }
