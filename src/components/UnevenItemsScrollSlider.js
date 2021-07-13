@@ -1,4 +1,4 @@
-import { animateScroll, infiniteScroll, renderSlides } from '#utils';
+import { animateScroll, infiniteScroll, quad, renderSlides } from '#utils';
 import PropTypes from 'prop-types';
 import React, { useCallback, useEffect, useRef } from 'react';
 import ResizeObserver from 'resize-observer-polyfill';
@@ -138,6 +138,8 @@ const UnevenItemsScrollSlider = (props) => {
         setItemsLength,
         isInfinite,
         direction,
+        animationDuration = 0.3,
+        animationTimingFunction = quad,
         ...otherProps
     } = props;
 
@@ -179,7 +181,12 @@ const UnevenItemsScrollSlider = (props) => {
                     : activeItem;
                 const itemWidth = offsetWidth * ratioToScroll;
                 const finalPosition = itemWidth * itemToMoveTo;
-                animateScroll(el, finalPosition, 0.3);
+                animateScroll(
+                    el,
+                    finalPosition,
+                    animationDuration,
+                    animationTimingFunction
+                );
             };
             moveToItem();
         }
@@ -325,6 +332,8 @@ UnevenItemsScrollSlider.propTypes = {
     ratioToScroll: PropTypes.number,
     isInfinite: PropTypes.bool,
     direction: PropTypes.string,
+    animationDuration: PropTypes.number,
+    animationTimingFunction: PropTypes.func,
 };
 
 UnevenItemsScrollSlider.defaultProps = {

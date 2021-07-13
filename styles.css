@@ -103,26 +103,27 @@
     width: 100%;
     display: flex;
     flex-flow: row nowrap;
-    transition: transform 300ms;
 }
 
 .slide {
     flex: 0 0 auto;
 }
 
+/* swipeSlider */
+.swipeSliderContainer {
+    transition: transform 300ms;
+}
+
 /* SnapSlider */
 .snapSliderContainer {
     scroll-snap-type: x mandatory;
-
-    /* Older spec implementation (for ios9/10) */
-    scroll-snap-destination: 0% 100%;
-    scroll-snap-points-x: repeat(100%);
-
+    scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch; /* For safari */
 }
 
 .snapSliderContainer > * {
     scroll-snap-align: center;
+    scroll-snap-stop: always;
 }
 
 /* UnevenItemsScrollSlider */
