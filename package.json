@@ -48,6 +48,9 @@
     ]
   },
   "dependencies": {
+    "@emotion/core": "^11.0.0",
+    "@emotion/react": "^11.4.0",
+    "@emotion/styled": "^11.3.0",
     "classnames": "^2.2.5",
     "fast-memoize": "^2.5.1",
     "lodash": "^4.17.10",

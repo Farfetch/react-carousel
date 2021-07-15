@@ -1,6 +1,6 @@
 import '../styles.css';
 import './Carousel.css';
-import { Arrow, Carousel, ScrollSlider } from '../src';
+import { Arrow, BaseArrow, Carousel, ScrollSlider } from '../src';
 import React from 'react';
 
 export default {
@@ -71,13 +71,15 @@ const Template = (args) => (
                     <p>5</p>
                 </a>
             </ScrollSlider>
-            <Arrow flow={'prev'}>
+            <BaseArrow flow="prev">Prev</BaseArrow>
+            <BaseArrow flow="next">Next</BaseArrow>
+            {/* <Arrow flow={'prev'}>
                 {({ onClick }) => <button onClick={onClick}>Previous</button>}
             </Arrow>
 
             <Arrow flow={'next'}>
                 {({ onClick }) => <button onClick={onClick}>Next</button>}
-            </Arrow>
+            </Arrow> */}
         </Carousel>
     </div>
 );

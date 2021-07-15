@@ -47,18 +47,10 @@ export const animateScroll = (
         progress: (percentage) => {
             const animationPosition =
                 startPosition + timingFunction(percentage) * diffPosition;
-            el.scroll({
-                left: animationPosition,
-                top: 0,
-                behavior: 'smooth',
-            });
+            el.scroll(animationPosition, 0);
         },
         done: () => {
-            el.scroll({
-                left: startPosition + diffPosition,
-                top: 0,
-                behavior: 'smooth',
-            });
+            el.scroll(startPosition + diffPosition, 0);
 
             if (typeof onDone === 'function') {
                 onDone();
