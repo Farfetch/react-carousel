@@ -1,4 +1,3 @@
-import '../styles.css';
 import './Carousel.css';
 import { Arrow, Carousel, SwipeSlider } from '../src';
 import React from 'react';

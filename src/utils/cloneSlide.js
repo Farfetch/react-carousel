@@ -1,5 +1,4 @@
 import { cloneElement } from 'react';
-import cx from 'classnames';
 import memoize from 'fast-memoize';
 
 const getElementStyle = function (style, styleChild) {
@@ -12,7 +11,6 @@ const cloneSlide = (child, index, isCloned, className, style) => {
     const newStyle = memoizedGetElementStyle(style, child.props.style);
 
     return cloneElement(child, {
-        className: cx(className, 'slide', child.props.className),
         style: newStyle,
         key: isCloned ? `c.${index}` : child.key,
         ref: (node) => {

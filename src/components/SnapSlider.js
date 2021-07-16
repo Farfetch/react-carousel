@@ -1,38 +1,17 @@
-import { ScrollSlider } from '#containers';
-import { quad } from '#utils';
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
-import cx from 'classnames';
+import ScrollSlider from './ScrollSlider';
+import styled from '@emotion/styled';
 
-class SnapSlider extends Component {
-    constructor(props) {
-        super(props);
+const SnapSlider = styled(ScrollSlider)`
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; /* For safari */
 
-        this.state = {
-            isMounted: false,
-        };
+    & > * {
+        scroll-snap-align: center;
+        scroll-snap-stop: always;
     }
+`;
 
-    render() {
-        return (
-            <ScrollSlider
-                {...this.props}
-                className={cx(this.props.className, 'snapSliderContainer')}
-            />
-        );
-    }
-}
-
-SnapSlider.defaultProps = {
-    animationDuration: 0.3,
-    animationTimingFunction: quad,
-};
-
-SnapSlider.propTypes = {
-    children: PropTypes.node.isRequired,
-    className: PropTypes.string,
-    animationDuration: PropTypes.number,
-    animationTimingFunction: PropTypes.func,
-};
+SnapSlider.displayName = 'SnapSlider';
 
 export default SnapSlider;

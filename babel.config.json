@@ -4,6 +4,7 @@
         ["@babel/plugin-proposal-object-rest-spread", { "useBuiltIns": true }],
         ["module-resolver", {
             "alias": {
+                "#base": "./src/base",
                 "#components": "./src/components",
                 "#components/**": "./src/components/**",
                 "#containers": "./src/containers",
