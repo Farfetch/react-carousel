@@ -1,9 +1,16 @@
 export { checkSnapSupport } from '#utils';
 export { CarouselContext, CarouselProvider } from '#context';
-export { Arrow, BaseArrow, Carousel, SnapSlider } from '#components';
+export { BaseCarousel } from '#base';
+export {
+    Arrow,
+    Carousel,
+    SnapSlider,
+    ScrollSlider,
+    SwipeSlider,
+} from '#components';
 export {
     Bullets,
-    SwipeSlider,
-    ScrollSlider,
+    BaseSwipeSlider,
+    BaseScrollSlider,
     UnevenItemsScrollSlider,
 } from '#containers';

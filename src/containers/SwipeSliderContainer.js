@@ -1,5 +1,5 @@
+import { BaseSwipeSlider } from '#base';
 import { CarouselContext } from '#context';
-import { SwipeSlider } from '#components';
 import React from 'react';
 
 const SwipeSliderContainer = (props) => (
@@ -16,7 +16,7 @@ const SwipeSliderContainer = (props) => (
             isMovementBlocked,
             direction,
         }) => (
-            <SwipeSlider
+            <BaseSwipeSlider
                 {...props}
                 activeItem={activeItem}
                 isRTL={isRTL}
