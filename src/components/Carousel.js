@@ -1,54 +1,13 @@
-import { CarouselProvider } from '#context';
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
-import cx from 'classnames';
+import { BaseCarousel } from '#base';
+import styled from '@emotion/styled';
 
-class Carousel extends Component {
-    render() {
-        const {
-            className,
-            children,
-            isInfinite,
-            isRTL,
-            itemsToShow,
-            itemsToScroll,
-            onAfterChange,
-            startItem,
-            ...otherProps
-        } = this.props;
+const Carousel = styled(BaseCarousel)`
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    touch-action: manipulation;
+`;
 
-        const providerProps = {
-            isInfinite,
-            isRTL,
-            itemsToShow,
-            onAfterChange,
-            itemsToScroll,
-            startItem,
-        };
-
-        return (
-            <CarouselProvider {...providerProps}>
-                <div className={cx('wrapper', className)} {...otherProps}>
-                    {children}
-                </div>
-            </CarouselProvider>
-        );
-    }
-}
-
-Carousel.propTypes = {
-    children: PropTypes.node.isRequired,
-    className: PropTypes.string,
-    isInfinite: PropTypes.bool,
-    isRTL: PropTypes.bool,
-    itemsToShow: PropTypes.number,
-    onAfterChange: PropTypes.func,
-    itemsToScroll: PropTypes.number,
-    startItem: PropTypes.number,
-};
-
-Carousel.defaultProps = {
-    itemsToScroll: 1,
-};
+Carousel.displayName = 'Carousel';
 
 export default Carousel;
