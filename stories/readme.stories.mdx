@@ -19,13 +19,7 @@ $ npm install --save @farfetch/react-carousel
 import { Carousel } from '@farfetch/react-carousel';
 ```
 
-We also include css styles out-of-the-box, to use them just import the css by doing the following:
-
-```js
-import '@farfetch/react-carousel/styles.css'
-```
-
-If you want to style the carousel by yourself, ignore this step.
+We also include base components that only possess logic, that way we will allow a blank slate in terms of styling.
 
 ## Concepts
 
@@ -75,10 +69,10 @@ const handleAfterChange = (e) => {
 };
 
 const MyComponent = (props) => (
-    <Carousel className={ Style.container } isInfinite isRTL itemsToShow={ 2 } onAfterChange={ handleAfterChange }>
-        <SwipeSlider className={ Style.slider } disableSwipe hasKeysNavigation>
-            <div className={ Style.customItem }>Item 1</div>
-            <div className={ Style.moreCustomItem }>Item 2</div>
+    <Carousel isInfinite isRTL itemsToShow={ 2 } onAfterChange={ handleAfterChange }>
+        <SwipeSlider disableSwipe hasKeysNavigation>
+            <div>Item 1</div>
+            <div>Item 2</div>
             <div>Item 3</div>
             <div>Item 4</div>
             <div>Item 5</div>
@@ -100,10 +94,10 @@ const handleAfterChange = (e) => {
 };
 
 const MyComponent = (props) => (
-    <Carousel className={ Style.container } isInfinite isRTL itemsToShow={ 2 } onAfterChange={ handleAfterChange }>
-        <ScrollSlider className={ Style.slider } limitScroll>
-            <div className={ Style.customItem }>Item 1</div>
-            <div className={ Style.moreCustomItem }>Item 2</div>
+    <Carousel isInfinite isRTL itemsToShow={ 2 } onAfterChange={ handleAfterChange }>
+        <ScrollSlider limitScroll>
+            <div>Item 1</div>
+            <div>Item 2</div>
             <div>Item 3</div>
             <div>Item 4</div>
             <div>Item 5</div>
@@ -125,10 +119,10 @@ const handleAfterChange = (e) => {
 };
 
 const MyComponent = (props) => (
-    <Carousel className={ Style.container } isInfinite isRTL itemsToShow={ 2 } onAfterChange={ handleAfterChange }>
-        <SnapSlider className={ Style.slider }>
-            <div className={ Style.customItem }>Item 1</div>
-            <div className={ Style.moreCustomItem }>Item 2</div>
+    <Carousel isInfinite isRTL itemsToShow={ 2 } onAfterChange={ handleAfterChange }>
+        <SnapSlider>
+            <div>Item 1</div>
+            <div>Item 2</div>
             <div>Item 3</div>
             <div>Item 4</div>
             <div>Item 5</div>
@@ -150,16 +144,16 @@ const handleAfterChange = (e) => {
 };
 
 const MyComponent = (props) => (
-    <Carousel className={ Style.container } isInfinite isRTL itemsToShow={ 2 } onAfterChange={ handleAfterChange }>
-        <SwipeSlider className={ Style.slider } disableSwipe hasKeysNavigation>
-            <div className={ Style.customItem }>Item 1</div>
-            <div className={ Style.moreCustomItem }>Item 2</div>
+    <Carousel isInfinite isRTL itemsToShow={ 2 } onAfterChange={ handleAfterChange }>
+        <SwipeSlider disableSwipe hasKeysNavigation>
+            <div>Item 1</div>
+            <div>Item 2</div>
             <div>Item 3</div>
             <div>Item 4</div>
             <div>Item 5</div>
         </SwipeSlider>
         
-        <Bullets theme={ BulletsTheme } />
+        <Bullets />
     </Carousel>
 );
 
@@ -181,10 +175,10 @@ const handleArrowClick = () => {
 }
 
 const MyComponent = (props) => (
-    <Carousel className={ Style.container } isInfinite isRTL itemsToShow={ 2 } onAfterChange={ handleAfterChange }>
-        <SwipeSlider className={ Style.slider } disableSwipe hasKeysNavigation>
-            <div className={ Style.customItem }>Item 1</div>
-            <div className={ Style.moreCustomItem }>Item 2</div>
+    <Carousel isInfinite isRTL itemsToShow={ 2 } onAfterChange={ handleAfterChange }>
+        <SwipeSlider disableSwipe hasKeysNavigation>
+            <div>Item 1</div>
+            <div>Item 2</div>
             <div>Item 3</div>
             <div>Item 4</div>
             <div>Item 5</div>
@@ -220,23 +214,23 @@ const handleArrowClick = () => {
 const ResponsiveCarousel = (props) => (
     const { children } = props;
     
-    <Carousel className={ Style.container } itemsToShow={ 2 } onAfterChange={ handleAfterChange }>
+    <Carousel onAfterChange={ handleAfterChange }>
         <ResponsiveConsumer>
             { ({ lessThan }) => {
                 lessThan.md ? (
-                    <ScrollSlider className={ Style.slider }>
+                    <ScrollSlider>
                         { children }
                     </SwipeSlider>
                 ) : 
                 (
-                    <SwipeSlider className={ Style.slider } disableSwipe hasKeysNavigation>
+                    <SwipeSlider disableSwipe hasKeysNavigation>
                         { children }
                     </SwipeSlider>
                 )
             } }
         </ResponsiveConsumer>
         
-        <Bullets theme={ BulletsTheme } />
+        <Bullets />
         
         <Arrow flow={ "prev" } onClick={ handleArrowClick }>
             { ({ onClick }) => <button onClick={ onClick }>Previous</button> }
@@ -272,10 +266,10 @@ const Pagination = (props) => {
 }
 
 const MyComponent = (props) => (
-    <Carousel className={ Style.container } isInfinite isRTL itemsToShow={ 2 } onAfterChange={ handleAfterChange }>
-        <SwipeSlider className={ Style.slider } disableSwipe hasKeysNavigation>
-            <div className={ Style.customItem }>Item 1</div>
-            <div className={ Style.moreCustomItem }>Item 2</div>
+    <Carousel isInfinite isRTL itemsToShow={ 2 } onAfterChange={ handleAfterChange }>
+        <SwipeSlider disableSwipe hasKeysNavigation>
+            <div>Item 1</div>
+            <div>Item 2</div>
             <div>Item 3</div>
             <div>Item 4</div>
             <div>Item 5</div>
@@ -308,7 +302,6 @@ The wrapper for the entire Carousel, it creates a wrapping `<div>` and an implem
 
 | Name              | Type   | Default | Description                                                                                                                                                          |
 |-------------------|--------|---------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| className         | String |         | Desired theme's class names                                                                                                                                          |
 | children          | Node   |         | The components to construct the carousel                                                                                                                             |
 | isInfinite        | Bool   | false   | Enables the behaviour to go back to the start/end in the carousel edges                                                                                              |
 | isRTL             | Bool   | false   | Sets the carousel in RTL mode                                                                                                                                        |
@@ -368,25 +361,6 @@ A render prop component that returns the onClick function, based on the props.
 
 The pagination of the carousel, with infinite bullets support.
 
-#### Properties
-
-| Name              | Type   | Default | Description                                                                            |
-|-------------------|--------|---------|----------------------------------------------------------------------------------------|
-| theme             | Object |         | The theme object, as described below                                                   |
-
-#### Theming
-
-| Name              | Description |
-|-------------------|-------------|
-| container         |             |
-| containerDefault  |             |
-| containerInfinite |             |
-| moveInfinite      |             |
-| bullet            |             |
-| bulletInfinite    |             |
-| isSecondary       |             |
-| isActive          |             |
-
 
 ### <a name="SwipeSlider"></a>SwipeSlider
 
@@ -396,7 +370,6 @@ A slider that uses Javascript swipe navigation and keyboard navigation.
 
 | Name              | Type   | Default | Description                                                                            |
 |-------------------|--------|---------|----------------------------------------------------------------------------------------|
-| className         | String |         | Desired theme's class names                                                            |
 | children          | Node   |         | The items for the carousel                                                             |
 | disableSwipe      | Bool   | false   | Disables the swipe navigation                                                          |
 | hasKeysNavigation | Bool   | true    | Enables the keyboard navigation for the carousel                                       |
@@ -413,7 +386,6 @@ A slider using native scroll navigation.  Variable-width items are **NOT** suppo
 
 | Name        | Type                    | Default  | Description                                                                |
 |-------------|-------------------------|----------|----------------------------------------------------------------------------|
-| className   | String                  |          | Desired theme's class names                                                |
 | children    | Node                    |          | The items for the carousel                                                 |
 | limitScroll | Bool                    | false    | Limits the scroll depth to just one item (mobile only)                     |
 
@@ -431,7 +403,6 @@ A slider using native scroll navigation.  `itemsToScroll` are **NOT** supported.
 
 | Name        | Type                    | Default  | Description                                                                |
 |-------------|-------------------------|----------|----------------------------------------------------------------------------|
-| className   | String                  |          | Desired theme's class names                                                |
 | children    | Node                    |          | The items for the carousel                                                 |
 | ratioToScroll | Number                    | 1    | Range ratioToScroll > 0 && ratioToScroll <= 1.  The percentage (in decimal form) of the carousel viewport to scroll when using [`Arrow`](#Arrow)                    |
 | itemOnSizeChange    | Number                    |          | The item to go to when length of carousel changes.  If not specified, the carousel will remain where it is when resizing occurs                                                 |
@@ -454,7 +425,6 @@ It fallback to the [`SwipeSlider`](#SwipeSlider) for browser with no support.
 
 | Name           | Type                    | Default  | Description                                                                |
 |----------------|-------------------------|----------|----------------------------------------------------------------------------|
-| className      | String                  |          | Desired theme's class names                                                |
 | children       | Node                    |          | The items for the carousel                                                 |
 | limitScroll    | Bool                    | true     | Limits the scroll depth to just one item (mobile only)                     |
 

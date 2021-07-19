@@ -47,10 +47,10 @@ describe('<UnevenItemsScrollSliderContainer/>', () => {
             </CarouselContext.Provider>
         );
 
-        expect(tree.find('UnevenItemsScrollSlider').prop('data-testId')).toBe(
-            'test'
-        );
-        expect(tree.find('UnevenItemsScrollSlider').prop('theme')).toEqual(
+        expect(
+            tree.find('BaseUnevenItemsScrollSlider').prop('data-testId')
+        ).toBe('test');
+        expect(tree.find('BaseUnevenItemsScrollSlider').prop('theme')).toEqual(
             mockTheme
         );
     });
@@ -64,7 +64,7 @@ describe('<UnevenItemsScrollSliderContainer/>', () => {
             </CarouselContext.Provider>
         );
 
-        expect(tree.find('UnevenItemsScrollSlider').props()).toMatchObject(
+        expect(tree.find('BaseUnevenItemsScrollSlider').props()).toMatchObject(
             mockContextCarousel
         );
     });

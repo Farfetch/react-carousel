@@ -1,9 +1,44 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<SnapSlider /> should render correctly the scroll version on SSR 1`] = `
+exports[`<SnapSlider /> should render correctly 1`] = `
+.emotion-0 {
+  position: relative;
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.emotion-0::-webkit-scrollbar {
+  width: 0;
+  display: none;
+}
+
+.emotion-0>* {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.emotion-0>* {
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+}
+
 <ScrollSliderContainer
-  className="snapSliderContainer"
-  limitScroll={false}
+  className="emotion-0"
 >
   <div>
     Test 1
@@ -12,32 +47,4 @@ exports[`<SnapSlider /> should render correctly the scroll version on SSR 1`] = 
     Test 2
   </div>
 </ScrollSliderContainer>
-`;
-
-exports[`<SnapSlider /> should render the scroll version if has support and is already mounted 1`] = `
-<ScrollSliderContainer
-  className="snapSliderContainer"
-  limitScroll={false}
->
-  <div>
-    Test 1
-  </div>
-  <div>
-    Test 2
-  </div>
-</ScrollSliderContainer>
-`;
-
-exports[`<SnapSlider /> should render the swipe version if has no snap support and is already mounted 1`] = `
-<SwipeSliderContainer
-  disableSwipe={false}
-  hasKeysNavigation={false}
->
-  <div>
-    Test 1
-  </div>
-  <div>
-    Test 2
-  </div>
-</SwipeSliderContainer>
 `;

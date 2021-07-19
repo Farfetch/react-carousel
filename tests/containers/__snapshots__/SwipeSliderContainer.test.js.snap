@@ -1,8 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<SwipeSliderContainer/> should render correctly 1`] = `
-<SwipeSlider
+<BaseSwipeSlider
   activeItem={1}
+  animationDuration={0.3}
   disableSwipe={false}
   goNext={[MockFunction]}
   goPrev={[MockFunction]}
@@ -10,8 +11,9 @@ exports[`<SwipeSliderContainer/> should render correctly 1`] = `
   isInfinite={false}
   isRTL={false}
   itemsToShow={2}
+  setIsMovementBlocked={[MockFunction]}
   setItemsLength={[MockFunction]}
 >
   <div />
-</SwipeSlider>
+</BaseSwipeSlider>
 `;

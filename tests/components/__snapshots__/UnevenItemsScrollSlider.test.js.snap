@@ -1,87 +1,67 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<UnevenItemsScrollSlider /> <UnevenItemsScrollSlider /> - props should render correctly with additional props 1`] = `
-<div
-  className="slider dummyClassName scrollSliderContainer"
-  onScroll={[Function]}
->
-  <div
-    className="unevenItemsWrapper"
-    onTouchEnd={[Function]}
-    onTouchMove={[Function]}
-    onTouchStart={[Function]}
-  >
-    <div
-      className="slide"
-      key=".$0"
-      style={Object {}}
-    >
-      First slide
-    </div>
-    <div
-      className="slide"
-      key=".$1"
-      style={Object {}}
-    >
-      Second slide
-    </div>
-    <div
-      className="slide"
-      key=".$2"
-      style={Object {}}
-    >
-      Third slide
-    </div>
-    <div
-      className="slide"
-      key=".$3"
-      style={Object {}}
-    >
-      Fourth slide
-    </div>
-  </div>
-</div>
-`;
-
 exports[`<UnevenItemsScrollSlider /> <UnevenItemsScrollSlider /> - props should render correctly with the required props 1`] = `
-<div
-  className="slider scrollSliderContainer"
-  onScroll={[Function]}
+.emotion-0 {
+  position: relative;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  overflow: hidden;
+}
+
+.emotion-0 [data-element='unevenItemsWrapper'] {
+  position: relative;
+  width: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  touch-action: none;
+}
+
+.emotion-0 [data-element='unevenItemsWrapper']>* {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+<UnevenItemsScrollSliderContainer
+  activeItem={0}
+  className="emotion-0"
+  goTo={[MockFunction]}
+  isInfinite={true}
+  isRTL={false}
+  itemsLength={5}
+  setItemsLength={[MockFunction]}
 >
   <div
-    className="unevenItemsWrapper"
-    onTouchEnd={[Function]}
-    onTouchMove={[Function]}
-    onTouchStart={[Function]}
+    key="0"
   >
-    <div
-      className="slide"
-      key=".$0"
-      style={Object {}}
-    >
-      First slide
-    </div>
-    <div
-      className="slide"
-      key=".$1"
-      style={Object {}}
-    >
-      Second slide
-    </div>
-    <div
-      className="slide"
-      key=".$2"
-      style={Object {}}
-    >
-      Third slide
-    </div>
-    <div
-      className="slide"
-      key=".$3"
-      style={Object {}}
-    >
-      Fourth slide
-    </div>
+    First slide
   </div>
-</div>
+  <div
+    key="1"
+  >
+    Second slide
+  </div>
+  <div
+    key="2"
+  >
+    Third slide
+  </div>
+  <div
+    key="3"
+  >
+    Fourth slide
+  </div>
+</UnevenItemsScrollSliderContainer>
 `;

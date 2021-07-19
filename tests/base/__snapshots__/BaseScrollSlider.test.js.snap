@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BaseScrollSlider /> <BaseScrollSlider /> - props should render correctly with aditional props 1`] = `
+<div
+  className="dummyClassName"
+  limitScroll={true}
+  onScroll={[Function]}
+>
+  <div
+    key=".$0"
+    style={
+      Object {
+        "width": "50.000000%",
+      }
+    }
+  >
+    First slide
+  </div>
+  <div
+    key=".$1"
+    style={
+      Object {
+        "width": "50.000000%",
+      }
+    }
+  >
+    Second slide
+  </div>
+  <div
+    key=".$2"
+    style={
+      Object {
+        "width": "50.000000%",
+      }
+    }
+  >
+    Third slide
+  </div>
+  <div
+    key=".$3"
+    style={
+      Object {
+        "width": "50.000000%",
+      }
+    }
+  >
+    Fourth slide
+  </div>
+</div>
+`;
+
+exports[`<BaseScrollSlider /> <BaseScrollSlider /> - props should render correctly with the required props 1`] = `
+<div
+  onScroll={[Function]}
+>
+  <div
+    key=".$0"
+    style={
+      Object {
+        "width": "50.000000%",
+      }
+    }
+  >
+    First slide
+  </div>
+  <div
+    key=".$1"
+    style={
+      Object {
+        "width": "50.000000%",
+      }
+    }
+  >
+    Second slide
+  </div>
+  <div
+    key=".$2"
+    style={
+      Object {
+        "width": "50.000000%",
+      }
+    }
+  >
+    Third slide
+  </div>
+  <div
+    key=".$3"
+    style={
+      Object {
+        "width": "50.000000%",
+      }
+    }
+  >
+    Fourth slide
+  </div>
+</div>
+`;

@@ -5,6 +5,5 @@ exports[`<BulletsContainer/> should render correctly 1`] = `
   activeItem={1}
   itemsLength={10}
   itemsToScroll={1}
-  theme={Object {}}
 />
 `;

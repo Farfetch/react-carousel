@@ -1,0 +1,466 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BaseBullets> - lifecycling for infinite bullets should update secondaryBullets and bullets when newProp.activeItem is not equal to the current one 1`] = `
+<div
+  aria-hidden="true"
+  data-active={1}
+  data-infinite={true}
+>
+  <BulletsInfiniteWrapper
+    style={
+      Object {
+        "transform": "translate(0rem)",
+      }
+    }
+  >
+    <Bullet
+      data-active={false}
+      data-infinite={true}
+      data-secondary={true}
+      data-tstid="bullet"
+      key="0"
+    />
+    <Bullet
+      data-active={true}
+      data-infinite={true}
+      data-secondary={false}
+      data-tstid="bullet"
+      key="1"
+    />
+    <Bullet
+      data-active={false}
+      data-infinite={true}
+      data-secondary={true}
+      data-tstid="bullet"
+      key="2"
+    />
+    <Bullet
+      data-active={false}
+      data-infinite={true}
+      data-secondary={false}
+      data-tstid="bullet"
+      key="3"
+    />
+    <Bullet
+      data-active={false}
+      data-infinite={true}
+      data-secondary={false}
+      data-tstid="bullet"
+      key="4"
+    />
+    <Bullet
+      data-active={false}
+      data-infinite={true}
+      data-secondary={false}
+      data-tstid="bullet"
+      key="5"
+    />
+    <Bullet
+      data-active={false}
+      data-infinite={true}
+      data-secondary={false}
+      data-tstid="bullet"
+      key="6"
+    />
+    <Bullet
+      data-active={false}
+      data-infinite={true}
+      data-secondary={false}
+      data-tstid="bullet"
+      key="7"
+    />
+    <Bullet
+      data-active={false}
+      data-infinite={true}
+      data-secondary={false}
+      data-tstid="bullet"
+      key="8"
+    />
+    <Bullet
+      data-active={false}
+      data-infinite={true}
+      data-secondary={false}
+      data-tstid="bullet"
+      key="9"
+    />
+  </BulletsInfiniteWrapper>
+</div>
+`;
+
+exports[`<BaseBullets> - props for default should render correctly the basic 1`] = `
+<div
+  aria-hidden="true"
+  data-active={0}
+  data-infinite={false}
+>
+  <Bullet
+    data-active={true}
+    data-infinite={false}
+    data-secondary={false}
+    data-tstid="bullet"
+    key="0"
+  />
+  <Bullet
+    data-active={false}
+    data-infinite={false}
+    data-secondary={true}
+    data-tstid="bullet"
+    key="1"
+  />
+  <Bullet
+    data-active={false}
+    data-infinite={false}
+    data-secondary={true}
+    data-tstid="bullet"
+    key="2"
+  />
+</div>
+`;
+
+exports[`<BaseBullets> - props for infinite bullets should render correctly when activeItem is the first one 1`] = `
+<div
+  aria-hidden="true"
+  data-active={0}
+  data-infinite={true}
+>
+  <BulletsInfiniteWrapper
+    style={
+      Object {
+        "transform": "translate(0rem)",
+      }
+    }
+  >
+    <Bullet
+      data-active={true}
+      data-infinite={true}
+      data-secondary={false}
+      data-tstid="bullet"
+      key="0"
+    />
+    <Bullet
+      data-active={false}
+      data-infinite={true}
+      data-secondary={true}
+      data-tstid="bullet"
+      key="1"
+    />
+    <Bullet
+      data-active={false}
+      data-infinite={true}
+      data-secondary={true}
+      data-tstid="bullet"
+      key="2"
+    />
+    <Bullet
+      data-active={false}
+      data-infinite={true}
+      data-secondary={false}
+      data-tstid="bullet"
+      key="3"
+    />
+    <Bullet
+      data-active={false}
+      data-infinite={true}
+      data-secondary={false}
+      data-tstid="bullet"
+      key="4"
+    />
+    <Bullet
+      data-active={false}
+      data-infinite={true}
+      data-secondary={false}
+      data-tstid="bullet"
+      key="5"
+    />
+    <Bullet
+      data-active={false}
+      data-infinite={true}
+      data-secondary={false}
+      data-tstid="bullet"
+      key="6"
+    />
+    <Bullet
+      data-active={false}
+      data-infinite={true}
+      data-secondary={false}
+      data-tstid="bullet"
+      key="7"
+    />
+    <Bullet
+      data-active={false}
+      data-infinite={true}
+      data-secondary={false}
+      data-tstid="bullet"
+      key="8"
+    />
+    <Bullet
+      data-active={false}
+      data-infinite={true}
+      data-secondary={false}
+      data-tstid="bullet"
+      key="9"
+    />
+  </BulletsInfiniteWrapper>
+</div>
+`;
+
+exports[`<BaseBullets> - props for infinite bullets should render correctly when activeItem is the last one 1`] = `
+<div
+  aria-hidden="true"
+  data-active={9}
+  data-infinite={true}
+>
+  <BulletsInfiniteWrapper
+    style={
+      Object {
+        "transform": "translate(-9rem)",
+      }
+    }
+  >
+    <Bullet
+      data-active={false}
+      data-infinite={true}
+      data-secondary={false}
+      data-tstid="bullet"
+      key="0"
+    />
+    <Bullet
+      data-active={false}
+      data-infinite={true}
+      data-secondary={false}
+      data-tstid="bullet"
+      key="1"
+    />
+    <Bullet
+      data-active={false}
+      data-infinite={true}
+      data-secondary={false}
+      data-tstid="bullet"
+      key="2"
+    />
+    <Bullet
+      data-active={false}
+      data-infinite={true}
+      data-secondary={false}
+      data-tstid="bullet"
+      key="3"
+    />
+    <Bullet
+      data-active={false}
+      data-infinite={true}
+      data-secondary={false}
+      data-tstid="bullet"
+      key="4"
+    />
+    <Bullet
+      data-active={false}
+      data-infinite={true}
+      data-secondary={false}
+      data-tstid="bullet"
+      key="5"
+    />
+    <Bullet
+      data-active={false}
+      data-infinite={true}
+      data-secondary={false}
+      data-tstid="bullet"
+      key="6"
+    />
+    <Bullet
+      data-active={false}
+      data-infinite={true}
+      data-secondary={false}
+      data-tstid="bullet"
+      key="7"
+    />
+    <Bullet
+      data-active={false}
+      data-infinite={true}
+      data-secondary={true}
+      data-tstid="bullet"
+      key="8"
+    />
+    <Bullet
+      data-active={true}
+      data-infinite={true}
+      data-secondary={false}
+      data-tstid="bullet"
+      key="9"
+    />
+  </BulletsInfiniteWrapper>
+</div>
+`;
+
+exports[`<BaseBullets> - props for infinite bullets should render correctly when activeItem is the penultimate one 1`] = `
+<div
+  aria-hidden="true"
+  data-active={8}
+  data-infinite={true}
+>
+  <BulletsInfiniteWrapper
+    style={
+      Object {
+        "transform": "translate(-9rem)",
+      }
+    }
+  >
+    <Bullet
+      data-active={false}
+      data-infinite={true}
+      data-secondary={false}
+      data-tstid="bullet"
+      key="0"
+    />
+    <Bullet
+      data-active={false}
+      data-infinite={true}
+      data-secondary={false}
+      data-tstid="bullet"
+      key="1"
+    />
+    <Bullet
+      data-active={false}
+      data-infinite={true}
+      data-secondary={false}
+      data-tstid="bullet"
+      key="2"
+    />
+    <Bullet
+      data-active={false}
+      data-infinite={true}
+      data-secondary={false}
+      data-tstid="bullet"
+      key="3"
+    />
+    <Bullet
+      data-active={false}
+      data-infinite={true}
+      data-secondary={false}
+      data-tstid="bullet"
+      key="4"
+    />
+    <Bullet
+      data-active={false}
+      data-infinite={true}
+      data-secondary={false}
+      data-tstid="bullet"
+      key="5"
+    />
+    <Bullet
+      data-active={false}
+      data-infinite={true}
+      data-secondary={false}
+      data-tstid="bullet"
+      key="6"
+    />
+    <Bullet
+      data-active={false}
+      data-infinite={true}
+      data-secondary={true}
+      data-tstid="bullet"
+      key="7"
+    />
+    <Bullet
+      data-active={true}
+      data-infinite={true}
+      data-secondary={false}
+      data-tstid="bullet"
+      key="8"
+    />
+    <Bullet
+      data-active={false}
+      data-infinite={true}
+      data-secondary={true}
+      data-tstid="bullet"
+      key="9"
+    />
+  </BulletsInfiniteWrapper>
+</div>
+`;
+
+exports[`<BaseBullets> - props for infinite bullets should render correctly when activeItem is the second one 1`] = `
+<div
+  aria-hidden="true"
+  data-active={1}
+  data-infinite={true}
+>
+  <BulletsInfiniteWrapper
+    style={
+      Object {
+        "transform": "translate(0rem)",
+      }
+    }
+  >
+    <Bullet
+      data-active={false}
+      data-infinite={true}
+      data-secondary={true}
+      data-tstid="bullet"
+      key="0"
+    />
+    <Bullet
+      data-active={true}
+      data-infinite={true}
+      data-secondary={false}
+      data-tstid="bullet"
+      key="1"
+    />
+    <Bullet
+      data-active={false}
+      data-infinite={true}
+      data-secondary={true}
+      data-tstid="bullet"
+      key="2"
+    />
+    <Bullet
+      data-active={false}
+      data-infinite={true}
+      data-secondary={false}
+      data-tstid="bullet"
+      key="3"
+    />
+    <Bullet
+      data-active={false}
+      data-infinite={true}
+      data-secondary={false}
+      data-tstid="bullet"
+      key="4"
+    />
+    <Bullet
+      data-active={false}
+      data-infinite={true}
+      data-secondary={false}
+      data-tstid="bullet"
+      key="5"
+    />
+    <Bullet
+      data-active={false}
+      data-infinite={true}
+      data-secondary={false}
+      data-tstid="bullet"
+      key="6"
+    />
+    <Bullet
+      data-active={false}
+      data-infinite={true}
+      data-secondary={false}
+      data-tstid="bullet"
+      key="7"
+    />
+    <Bullet
+      data-active={false}
+      data-infinite={true}
+      data-secondary={false}
+      data-tstid="bullet"
+      key="8"
+    />
+    <Bullet
+      data-active={false}
+      data-infinite={true}
+      data-secondary={false}
+      data-tstid="bullet"
+      key="9"
+    />
+  </BulletsInfiniteWrapper>
+</div>
+`;
