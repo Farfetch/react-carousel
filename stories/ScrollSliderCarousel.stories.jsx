@@ -8,31 +8,31 @@ export default {
 };
 
 const children = [
-    <a key={1} className="item first">
+    <a href="#" key={1} className="item first">
         <svg viewBox="0 0 7 4"></svg>
         <p>1</p>
     </a>,
-    <a key={2} className="item second">
+    <a href="#" key={2} className="item second">
         <svg viewBox="0 0 7 4"></svg>
         <p>2</p>
     </a>,
-    <a key={3} className="item third">
+    <a href="#" key={3} className="item third">
         <svg viewBox="0 0 7 4"></svg>
         <p>3</p>
     </a>,
-    <a key={4} className="item fourth">
+    <a href="#" key={4} className="item fourth">
         <svg viewBox="0 0 7 4"></svg>
         <p>4</p>
     </a>,
-    <a key={5} className="item fifth">
+    <a href="#" key={5} className="item fifth">
         <svg viewBox="0 0 7 4"></svg>
         <p>5</p>
     </a>,
-    <a key={6} className="item sixth">
+    <a href="#" key={6} className="item sixth">
         <svg viewBox="0 0 7 4"></svg>
         <p>6</p>
     </a>,
-    <a key={7} className="item seventh">
+    <a href="#" key={7} className="item seventh">
         <svg viewBox="0 0 7 2"></svg>
         <p>7</p>
     </a>,

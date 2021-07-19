@@ -6,7 +6,8 @@ A carousel component, with support for Swipe, Scroll and Snap Points.
 ## Installing
 
 ```bash
-$ npm install --save @farfetch/react-carousel
+$ npm install --save @farfetch/react-carousel or
+$ yarn add @farfetch/react-carousel
 ```
 
 ...and include it in your project
@@ -101,7 +102,7 @@ const handleAfterChange = (e) => {
 
 const MyComponent = (props) => (
     <Carousel isInfinite isRTL itemsToShow={ 2 } onAfterChange={ handleAfterChange }>
-        <ScrollSlider limitScroll>
+        <ScrollSlider>
             <div>Item 1</div>
             <div>Item 2</div>
             <div>Item 3</div>
@@ -374,11 +375,12 @@ A slider that uses Javascript swipe navigation and keyboard navigation.
 
 #### Properties
 
-| Name              | Type   | Default | Description                                                                            |
-|-------------------|--------|---------|----------------------------------------------------------------------------------------|
-| children          | Node   |         | The items for the carousel                                                             |
-| disableSwipe      | Bool   | false   | Disables the swipe navigation                                                          |
-| hasKeysNavigation | Bool   | true    | Enables the keyboard navigation for the carousel                                       |
+| Name              | Type   | Default | Description                                             |
+|-------------------|--------|---------|---------------------------------------------------------|
+| children          | Node   |         | The items for the carousel                              |
+| disableSwipe      | Bool   | false   | Disables the swipe navigation                           |
+| hasKeysNavigation | Bool   | true    | Enables the keyboard navigation for the carousel        |
+| animationDuration | number   | 0.3   | Animation duration                                      |
 
 #### Support for navigation components
 
@@ -390,10 +392,11 @@ A slider using native scroll navigation.  Variable-width items are **NOT** suppo
 
 #### Properties
 
-| Name        | Type                    | Default  | Description                                                                |
-|-------------|-------------------------|----------|----------------------------------------------------------------------------|
-| children    | Node                    |          | The items for the carousel                                                 |
-| limitScroll | Bool                    | false    | Limits the scroll depth to just one item (mobile only)                     |
+| Name                    | Type  | Default  | Description                                            |
+|-------------------------|-------|----------|--------------------------------------------------------|
+| children                | Node  |          | The items for the carousel                             |
+| animationDuration       | number  | 0.3    | Animation duration                                     |
+| animationTimingFunction | function  | easeInOutQuad    | Function that determines type of animation             |
 
 #### Support for navigation components
 
@@ -409,9 +412,11 @@ A slider using native scroll navigation.  `itemsToScroll` are **NOT** supported.
 
 | Name        | Type                    | Default  | Description                                                                |
 |-------------|-------------------------|----------|----------------------------------------------------------------------------|
-| children    | Node                    |          | The items for the carousel                                                 |
-| ratioToScroll | Number                    | 1    | Range ratioToScroll > 0 && ratioToScroll <= 1.  The percentage (in decimal form) of the carousel viewport to scroll when using [`Arrow`](#Arrow)                    |
-| itemOnSizeChange    | Number                    |          | The item to go to when length of carousel changes.  If not specified, the carousel will remain where it is when resizing occurs                                                 |
+| children            | Node    |          | The items for the carousel                                      |
+| ratioToScroll       | Number  | 1        | Range ratioToScroll > 0 && ratioToScroll <= 1.  The percentage (in decimal form) of the carousel viewport to scroll when using [`Arrow`](#Arrow) |
+| itemOnSizeChange    | Number  |          | The item to go to when length of carousel changes.  If not specified, the carousel will remain where it is when resizing occurs    |
+| animationDuration       | number  | 0.3    | Animation duration                                     |
+| animationTimingFunction | function  | easeInOutQuad    | Function that determines type of animation             |
 
 #### Support for navigation components
 
@@ -432,7 +437,8 @@ It fallback to the [`SwipeSlider`](#SwipeSlider) for browser with no support.
 | Name           | Type                    | Default  | Description                                                                |
 |----------------|-------------------------|----------|----------------------------------------------------------------------------|
 | children       | Node                    |          | The items for the carousel                                                 |
-| limitScroll    | Bool                    | true     | Limits the scroll depth to just one item (mobile only)                     |
+| animationDuration       | number  | 0.3    | Animation duration                                     |
+| animationTimingFunction | function  | easeInOutQuad    | Function that determines type of animation             |
 
 
 #### Support for navigation components
