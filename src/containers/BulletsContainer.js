@@ -4,9 +4,10 @@ import React from 'react';
 
 const BulletsContainer = (props) => (
     <CarouselContext.Consumer>
-        {({ activeItem, itemsLength, isRTL, itemsToScroll }) => (
+        {({ activeItem, itemsToShow, itemsLength, isRTL, itemsToScroll }) => (
             <Bullets
                 {...props}
+                itemsToShow={itemsToShow}
                 activeItem={activeItem}
                 itemsLength={itemsLength}
                 isRTL={isRTL}

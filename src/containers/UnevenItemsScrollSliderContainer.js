@@ -1,5 +1,5 @@
+import { BaseUnevenItemsScrollSlider } from '#base';
 import { CarouselContext } from '#context';
-import { UnevenItemsScrollSlider } from '#components';
 import React, { useContext } from 'react';
 
 const UnevenItemsScrollSliderContainer = (props) => {
@@ -14,7 +14,7 @@ const UnevenItemsScrollSliderContainer = (props) => {
     } = useContext(CarouselContext);
 
     return (
-        <UnevenItemsScrollSlider
+        <BaseUnevenItemsScrollSlider
             {...props}
             isRTL={isRTL}
             activeItem={activeItem}

@@ -1,5 +1,7 @@
 export { default as Arrow } from './Arrow';
+export { default as Bullet } from './Bullet';
 export { default as Bullets } from './Bullets';
+export { default as BulletsInfiniteWrapper } from './BulletsInfiniteWrapper';
 export { default as Carousel } from './Carousel';
 export { default as SnapSlider } from './SnapSlider';
 export { default as ScrollSlider } from './ScrollSlider';

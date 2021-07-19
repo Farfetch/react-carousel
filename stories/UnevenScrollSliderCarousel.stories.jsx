@@ -1,10 +1,10 @@
 import './Carousel.css';
-import { Arrow, Bullets, Carousel, ScrollSlider } from '../src';
+import { Arrow, Carousel, UnevenItemsScrollSlider } from '../src';
 import React from 'react';
 
 export default {
     component: Carousel,
-    title: 'Carousel/ScrollSlider',
+    title: 'Carousel/UnevenItemsScrollSlider',
 };
 
 const children = [
@@ -39,20 +39,20 @@ const children = [
 ];
 
 const Template = (args) => (
-    <div className="area">
+    <div className="area-small">
         <Carousel
             isInfinite={args.isInfinite}
             isRTL={args.isRTL}
             itemsToShow={args.itemsToShow}
             itemsToScroll={args.itemsToScroll}
         >
-            <ScrollSlider
+            <UnevenItemsScrollSlider
                 animationDuration={args.animationDuration}
                 animationTimingFunction={args.animationTimingFunction}
+                ratioToScroll={args.ratioToScroll}
             >
                 {children}
-            </ScrollSlider>
-            <Bullets />
+            </UnevenItemsScrollSlider>
             <Arrow flow={'prev'}>
                 {({ onClick }) => <button onClick={onClick}>Previous</button>}
             </Arrow>
@@ -64,14 +64,22 @@ const Template = (args) => (
     </div>
 );
 
-export const ScrollCarousel = Template.bind({});
-ScrollCarousel.args = {
+export const UnevenItemsScrollCarousel = Template.bind({});
+UnevenItemsScrollCarousel.args = {
     isInfinite: false,
     isRTL: false,
-    itemsToShow: 1.25,
-    itemsToScroll: 1,
     animationDuration: 0.3,
+    ratioToScroll: 0.5,
     animationTimingFunction: function quad(timeFraction) {
         return Math.pow(timeFraction, 2);
+    },
+};
+
+UnevenItemsScrollCarousel.argsTypes = {
+    ratioToScroll: {
+        type: 'range',
+        min: 0,
+        max: 1,
+        step: 0.1,
     },
 };
