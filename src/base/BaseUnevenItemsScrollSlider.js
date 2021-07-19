@@ -1,4 +1,9 @@
-import { animateScroll, infiniteScroll, quad, renderSlides } from '#utils';
+import {
+    animateScroll,
+    easeInOutQuad,
+    infiniteScroll,
+    renderSlides,
+} from '#utils';
 import PropTypes from 'prop-types';
 import React, { useCallback, useEffect, useRef } from 'react';
 import ResizeObserver from 'resize-observer-polyfill';
@@ -137,7 +142,7 @@ const BaseUnevenItemsScrollSlider = (props) => {
         isInfinite,
         direction,
         animationDuration = 0.3,
-        animationTimingFunction = quad,
+        animationTimingFunction = easeInOutQuad,
         ...otherProps
     } = props;
 

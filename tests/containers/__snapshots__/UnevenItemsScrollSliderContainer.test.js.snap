@@ -2,7 +2,7 @@
 
 exports[`<UnevenItemsScrollSliderContainer/> should render correctly 1`] = `
 <UnevenItemsScrollSliderContainer>
-  <UnevenItemsScrollSlider
+  <BaseUnevenItemsScrollSlider
     activeItem={1}
     goTo={[MockFunction]}
     isRTL={false}
@@ -25,22 +25,20 @@ exports[`<UnevenItemsScrollSliderContainer/> should render correctly 1`] = `
     }
   >
     <div
-      className="slider scrollSliderContainer"
       onScroll={[Function]}
     >
       <div
-        className="unevenItemsWrapper"
+        data-element="unevenItemsWrapper"
         onTouchEnd={[Function]}
         onTouchMove={[Function]}
         onTouchStart={[Function]}
       >
         <div
-          className="slide"
           key="null/.0"
           style={Object {}}
         />
       </div>
     </div>
-  </UnevenItemsScrollSlider>
+  </BaseUnevenItemsScrollSlider>
 </UnevenItemsScrollSliderContainer>
 `;

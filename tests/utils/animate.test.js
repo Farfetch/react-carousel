@@ -1,5 +1,5 @@
+import { easeInOutQuad } from '../../src/utils';
 import animate, { animateScroll } from '../../src/utils/animate';
-import easeInOutQuad from '../../src/utils/easeInOutQuad';
 
 let initialTimestamp = 0;
 const rafStep = 100;
@@ -79,7 +79,13 @@ describe('animateScroll', () => {
             scroll: jest.fn(),
         };
 
-        animateScroll(el, finalPosition, durationInSec, undefined);
+        animateScroll(
+            el,
+            finalPosition,
+            durationInSec,
+            easeInOutQuad,
+            undefined
+        );
 
         jest.runAllTimers();
 
@@ -114,7 +120,7 @@ describe('animateScroll', () => {
 
         const onDone = jest.fn();
 
-        animateScroll(el, finalPosition, durationInSec, onDone);
+        animateScroll(el, finalPosition, durationInSec, easeInOutQuad, onDone);
 
         const steps = durationInMs / rafStep + 1;
         expect(el.scroll).toHaveBeenCalledTimes(steps);

@@ -134,7 +134,6 @@ BaseBullets.propTypes = {
 
 BaseBullets.defaultProps = {
     itemsToScroll: 1,
-    theme: {},
 };
 
 export default BaseBullets;

@@ -2,7 +2,6 @@
 
 exports[`cloneSlide() should return slide element with additional configuration 1`] = `
 <div
-  className="dummyClassName slide"
   key="0"
   style={
     Object {
@@ -16,7 +15,6 @@ exports[`cloneSlide() should return slide element with additional configuration 
 
 exports[`cloneSlide() should return slide element with minimum configuration 1`] = `
 <div
-  className="slide"
   key="null"
   style={Object {}}
 >
@@ -26,7 +24,6 @@ exports[`cloneSlide() should return slide element with minimum configuration 1`]
 
 exports[`cloneSlide() should return slide element with new key when it is cloned 1`] = `
 <div
-  className="slide"
   key="c.1"
   style={Object {}}
 >

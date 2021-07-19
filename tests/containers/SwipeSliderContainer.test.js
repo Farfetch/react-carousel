@@ -9,6 +9,7 @@ const mockContextCarousel = {
     itemsToShow: 2,
     isInfinite: false,
     setItemsLength: jest.fn(),
+    setIsMovementBlocked: jest.fn(),
     goNext: jest.fn(),
     goPrev: jest.fn(),
 };
@@ -31,19 +32,15 @@ describe('<SwipeSliderContainer/>', () => {
     });
 
     it('should render correctly with custom Props', () => {
-        const mockTheme = {
-            container: 'container',
-        };
         const tree = shallow(
-            <SwipeSliderContainer data-testId="test" theme={mockTheme}>
+            <SwipeSliderContainer data-testId="test">
                 {mockChildren}
             </SwipeSliderContainer>
         ).renderProp('children')({
             ...mockContextCarousel,
         });
 
-        expect(tree.find('SwipeSlider').prop('data-testId')).toBe('test');
-        expect(tree.find('SwipeSlider').prop('theme')).toEqual(mockTheme);
+        expect(tree.find('BaseSwipeSlider').prop('data-testId')).toBe('test');
     });
 
     it('should render correctly with correct Context', () => {
@@ -53,25 +50,25 @@ describe('<SwipeSliderContainer/>', () => {
             ...mockContextCarousel,
         });
 
-        expect(tree.find('SwipeSlider').prop('activeItem')).toBe(
+        expect(tree.find('BaseSwipeSlider').prop('activeItem')).toBe(
             mockContextCarousel.activeItem
         );
-        expect(tree.find('SwipeSlider').prop('isRTL')).toBe(
+        expect(tree.find('BaseSwipeSlider').prop('isRTL')).toBe(
             mockContextCarousel.isRTL
         );
-        expect(tree.find('SwipeSlider').prop('isInfinite')).toBe(
+        expect(tree.find('BaseSwipeSlider').prop('isInfinite')).toBe(
             mockContextCarousel.isInfinite
         );
-        expect(tree.find('SwipeSlider').prop('itemsToShow')).toBe(
+        expect(tree.find('BaseSwipeSlider').prop('itemsToShow')).toBe(
             mockContextCarousel.itemsToShow
         );
-        expect(tree.find('SwipeSlider').prop('setItemsLength')).toBe(
+        expect(tree.find('BaseSwipeSlider').prop('setItemsLength')).toBe(
             mockContextCarousel.setItemsLength
         );
-        expect(tree.find('SwipeSlider').prop('goNext')).toBe(
+        expect(tree.find('BaseSwipeSlider').prop('goNext')).toBe(
             mockContextCarousel.goNext
         );
-        expect(tree.find('SwipeSlider').prop('goPrev')).toBe(
+        expect(tree.find('BaseSwipeSlider').prop('goPrev')).toBe(
             mockContextCarousel.goPrev
         );
     });

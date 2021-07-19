@@ -3,7 +3,6 @@
 exports[`renderSlides() should return slides array 1`] = `
 Array [
   <div
-    className="slide"
     style={
       Object {
         "width": "50.000000%",
@@ -13,7 +12,6 @@ Array [
     First slide
   </div>,
   <div
-    className="slide"
     style={
       Object {
         "width": "50.000000%",
@@ -23,7 +21,6 @@ Array [
     Second slide
   </div>,
   <div
-    className="slide"
     style={
       Object {
         "width": "50.000000%",
@@ -33,7 +30,6 @@ Array [
     Third slide
   </div>,
   <div
-    className="slide"
     style={
       Object {
         "width": "50.000000%",

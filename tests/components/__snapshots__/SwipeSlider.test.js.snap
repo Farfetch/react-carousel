@@ -1,241 +1,75 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<SwipeSlider /> props should add cloned slides and update styles inline when isInfinite 1`] = `
-<reactSwipeEvents
-  nodeName="div"
-  onSwipedLeft={[Function]}
-  onSwipedRight={[Function]}
-  threshold={10}
->
-  <div
-    className="slider"
-    direction={null}
-    onTransitionEnd={[Function]}
-    style={
-      Object {
-        "transform": "translate3d(-0%, 0, 0)",
-        "transition": "",
-      }
-    }
-  >
-    <div
-      className="slide"
-      key=".$0"
-      style={
-        Object {
-          "width": "50.000000%",
-        }
-      }
-    >
-      First slide
-    </div>
-    <div
-      className="slide"
-      key=".$1"
-      style={
-        Object {
-          "width": "50.000000%",
-        }
-      }
-    >
-      Second slide
-    </div>
-    <div
-      className="slide"
-      key=".$2"
-      style={
-        Object {
-          "width": "50.000000%",
-        }
-      }
-    >
-      Third slide
-    </div>
-    <div
-      className="slide"
-      key=".$3"
-      style={
-        Object {
-          "width": "50.000000%",
-        }
-      }
-    >
-      Fourth slide
-    </div>
-    <div
-      className="slide"
-      key=".$4"
-      style={
-        Object {
-          "width": "50.000000%",
-        }
-      }
-    >
-      Five slide
-    </div>
-    <div
-      className="slide"
-      key=".$5"
-      style={
-        Object {
-          "width": "50.000000%",
-        }
-      }
-    >
-      Sixth slide
-    </div>
-    <div
-      className="slide"
-      key=".$6"
-      style={
-        Object {
-          "width": "50.000000%",
-        }
-      }
-    >
-      Seventh slide
-    </div>
-  </div>
-</reactSwipeEvents>
-`;
-
-exports[`<SwipeSlider /> props should not add clone slides when have less children than itemsToShow 1`] = `
-<reactSwipeEvents
-  nodeName="div"
-  threshold={10}
->
-  <div
-    className="slider"
-    direction={null}
-    onTransitionEnd={[Function]}
-    style={
-      Object {
-        "transform": "translate3d(-0%, 0, 0)",
-        "transition": "",
-      }
-    }
-  >
-    <div
-      className="slide"
-      key=".$0"
-      style={
-        Object {
-          "width": "50.000000%",
-        }
-      }
-    >
-      First slide
-    </div>
-    <div
-      className="slide"
-      key=".$1"
-      style={
-        Object {
-          "width": "50.000000%",
-        }
-      }
-    >
-      Second slide
-    </div>
-  </div>
-</reactSwipeEvents>
-`;
-
 exports[`<SwipeSlider /> props should render correctly the sliders cloned from children elements 1`] = `
-<reactSwipeEvents
-  nodeName="div"
-  onSwipedLeft={[Function]}
-  onSwipedRight={[Function]}
-  threshold={10}
+.emotion-0 {
+  position: relative;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex-flow: row nowrap;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+}
+
+.emotion-0>* {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+<SwipeSliderContainer
+  activeItem={0}
+  animationDuration={0.3}
+  className="emotion-0"
+  direction={null}
+  goNext={[MockFunction]}
+  goPrev={[MockFunction]}
+  isInfinite={false}
+  isMovementBlocked={false}
+  isRTL={false}
+  itemsToShow={2}
+  setIsMovementBlocked={[MockFunction]}
+  setItemsLength={[MockFunction]}
 >
   <div
-    className="slider"
-    direction={null}
-    onTransitionEnd={[Function]}
-    style={
-      Object {
-        "transform": "translate3d(-0%, 0, 0)",
-        "transition": "",
-      }
-    }
+    key="0"
   >
-    <div
-      className="slide"
-      key=".$0"
-      style={
-        Object {
-          "width": "50.000000%",
-        }
-      }
-    >
-      First slide
-    </div>
-    <div
-      className="slide"
-      key=".$1"
-      style={
-        Object {
-          "width": "50.000000%",
-        }
-      }
-    >
-      Second slide
-    </div>
-    <div
-      className="slide"
-      key=".$2"
-      style={
-        Object {
-          "width": "50.000000%",
-        }
-      }
-    >
-      Third slide
-    </div>
-    <div
-      className="slide"
-      key=".$3"
-      style={
-        Object {
-          "width": "50.000000%",
-        }
-      }
-    >
-      Fourth slide
-    </div>
-    <div
-      className="slide"
-      key=".$4"
-      style={
-        Object {
-          "width": "50.000000%",
-        }
-      }
-    >
-      Five slide
-    </div>
-    <div
-      className="slide"
-      key=".$5"
-      style={
-        Object {
-          "width": "50.000000%",
-        }
-      }
-    >
-      Sixth slide
-    </div>
-    <div
-      className="slide"
-      key=".$6"
-      style={
-        Object {
-          "width": "50.000000%",
-        }
-      }
-    >
-      Seventh slide
-    </div>
+    First slide
   </div>
-</reactSwipeEvents>
+  <div
+    key="1"
+  >
+    Second slide
+  </div>
+  <div
+    key="2"
+  >
+    Third slide
+  </div>
+  <div
+    key="3"
+  >
+    Fourth slide
+  </div>
+  <div
+    key="4"
+  >
+    Five slide
+  </div>
+  <div
+    key="5"
+  >
+    Sixth slide
+  </div>
+  <div
+    key="6"
+  >
+    Seventh slide
+  </div>
+</SwipeSliderContainer>
 `;

@@ -40,8 +40,8 @@ describe('<ScrollSliderContainer/>', () => {
             ...mockContextCarousel,
         });
 
-        expect(tree.find('ScrollSlider').prop('data-testId')).toBe('test');
-        expect(tree.find('ScrollSlider').prop('theme')).toEqual(mockTheme);
+        expect(tree.find('BaseScrollSlider').prop('data-testId')).toBe('test');
+        expect(tree.find('BaseScrollSlider').prop('theme')).toEqual(mockTheme);
     });
 
     it('should render correctly with correct Context', () => {
@@ -51,19 +51,19 @@ describe('<ScrollSliderContainer/>', () => {
             ...mockContextCarousel,
         });
 
-        expect(tree.find('ScrollSlider').prop('activeItem')).toBe(
+        expect(tree.find('BaseScrollSlider').prop('activeItem')).toBe(
             mockContextCarousel.activeItem
         );
-        expect(tree.find('ScrollSlider').prop('isRTL')).toBe(
+        expect(tree.find('BaseScrollSlider').prop('isRTL')).toBe(
             mockContextCarousel.isRTL
         );
-        expect(tree.find('ScrollSlider').prop('itemsToShow')).toBe(
+        expect(tree.find('BaseScrollSlider').prop('itemsToShow')).toBe(
             mockContextCarousel.itemsToShow
         );
-        expect(tree.find('ScrollSlider').prop('setItemsLength')).toBe(
+        expect(tree.find('BaseScrollSlider').prop('setItemsLength')).toBe(
             mockContextCarousel.setItemsLength
         );
-        expect(tree.find('ScrollSlider').prop('goTo')).toBe(
+        expect(tree.find('BaseScrollSlider').prop('goTo')).toBe(
             mockContextCarousel.goTo
         );
     });

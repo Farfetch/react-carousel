@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BaseUnevenItemsScrollSlider /> <BaseUnevenItemsScrollSlider /> - props should render correctly with additional props 1`] = `
+<div
+  className="dummyClassName"
+  onScroll={[Function]}
+>
+  <div
+    data-element="unevenItemsWrapper"
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
+  >
+    <div
+      key=".$0"
+      style={Object {}}
+    >
+      First slide
+    </div>
+    <div
+      key=".$1"
+      style={Object {}}
+    >
+      Second slide
+    </div>
+    <div
+      key=".$2"
+      style={Object {}}
+    >
+      Third slide
+    </div>
+    <div
+      key=".$3"
+      style={Object {}}
+    >
+      Fourth slide
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<BaseUnevenItemsScrollSlider /> <BaseUnevenItemsScrollSlider /> - props should render correctly with the required props 1`] = `
+<div
+  onScroll={[Function]}
+>
+  <div
+    data-element="unevenItemsWrapper"
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
+  >
+    <div
+      key=".$0"
+      style={Object {}}
+    >
+      First slide
+    </div>
+    <div
+      key=".$1"
+      style={Object {}}
+    >
+      Second slide
+    </div>
+    <div
+      key=".$2"
+      style={Object {}}
+    >
+      Third slide
+    </div>
+    <div
+      key=".$3"
+      style={Object {}}
+    >
+      Fourth slide
+    </div>
+  </div>
+</div>
+`;

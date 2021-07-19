@@ -4,8 +4,8 @@ import {
     isNodeVisible,
 } from '../../src/utils/unevenInfiniteScroll';
 import { mount } from 'enzyme';
+import BaseUnevenItemsScrollSlider from '../../src/base/BaseUnevenItemsScrollSlider';
 import React from 'react';
-import UnevenItemsScrollSlider from '../../src/components/UnevenItemsScrollSlider';
 
 Object.defineProperty(HTMLElement.prototype, 'offsetWidth', {
     configurable: true,
@@ -50,11 +50,15 @@ const mockProps = {
 };
 
 describe('unevenInfiniteScroll', () => {
-    const wrapper = mount(<UnevenItemsScrollSlider {...mockProps} />);
+    const wrapper = mount(<BaseUnevenItemsScrollSlider {...mockProps} />);
 
-    const containerElement = wrapper.find('.unevenItemsContainer');
-    const wrapperElement = containerElement.find('.unevenItemsWrapper');
-    const nodes = wrapperElement.find('.slide');
+    expect(wrapper).toMatchSnapshot();
+
+    const containerElement = wrapper;
+    const wrapperElement = containerElement.find(
+        '[data-element="unevenItemsWrapper"]'
+    );
+    const nodes = wrapperElement.children();
 
     containerElement.getDOMNode().offsetWidth = 600;
 

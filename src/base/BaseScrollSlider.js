@@ -1,4 +1,4 @@
-import { animateScroll, quad, renderSlides } from '#utils';
+import { animateScroll, easeInOutQuad, renderSlides } from '#utils';
 import PropTypes from 'prop-types';
 import React, { Children, Component, createRef } from 'react';
 import debounce from 'lodash/debounce';
@@ -126,7 +126,7 @@ class BaseScrollSlider extends Component {
 
 BaseScrollSlider.defaultProps = {
     animationDuration: 0.3,
-    animationTimingFunction: quad,
+    animationTimingFunction: easeInOutQuad,
 };
 
 BaseScrollSlider.propTypes = {
