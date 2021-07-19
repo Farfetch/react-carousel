@@ -7,10 +7,11 @@ export {
     SnapSlider,
     ScrollSlider,
     SwipeSlider,
+    UnevenItemsScrollSlider,
 } from '#components';
 export {
     Bullets,
     BaseSwipeSlider,
     BaseScrollSlider,
-    UnevenItemsScrollSlider,
+    BaseUnevenItemsScrollSlider,
 } from '#containers';
