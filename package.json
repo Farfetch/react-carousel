@@ -47,9 +47,6 @@
     ]
   },
   "dependencies": {
-    "@emotion/core": "^11.0.0",
-    "@emotion/react": "^11.4.0",
-    "@emotion/styled": "^11.3.0",
     "fast-memoize": "^2.5.1",
     "lodash": "^4.17.10",
     "prop-types": "^15.5.8",
@@ -57,7 +54,9 @@
     "resize-observer-polyfill": "^1.5.1"
   },
   "peerDependencies": {
-    "react": "^16.8.0"
+    "react": "^16.8.0",
+    "@emotion/react": "^11.4.0",
+    "@emotion/styled": "^11.3.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
@@ -67,6 +66,8 @@
     "@babel/preset-react": "^7.9.4",
     "@commitlint/config-conventional": "^9.0.1",
     "@emotion/jest": "^11.3.0",
+    "@emotion/react": "^11.4.0",
+    "@emotion/styled": "^11.3.0",
     "@react-theming/storybook-addon": "^1.1.1",
     "@semantic-release/changelog": "^5.0.1",
     "@semantic-release/git": "^9.0.0",

@@ -15,8 +15,8 @@ $ yarn add @farfetch/react-carousel
 ```js
 import { Carousel } from '@farfetch/react-carousel';
 ```
-
-We also include base components that only possess logic, that way we will allow a blank slate in terms of styling.
+This package uses [Emotion](https://emotion.sh/docs/introduction) for styling. 
+We include components with default styling that can be extended or changed with emotion. We also include Base components that only contain logic, if a version without any kind of styling is needed, a blank slate, these are available.
 
 ## Screenshots
 ![Example](docs/example.png)
@@ -470,6 +470,10 @@ You can easily consume any information from the [`CarouselContext.Consumer`](#Ca
 ## React compatibility
 
 React >= `16.8.0` is required to use this package. 
+
+## Peer Dependencies
+
+@emotion/styled >= 11.3.0
 
 ## Contributing
 
