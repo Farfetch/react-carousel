@@ -38,7 +38,9 @@ exports[`<SnapSlider /> should render correctly 1`] = `
 }
 
 <ScrollSliderContainer
+  align="center"
   className="emotion-0"
+  type="snap"
 >
   <div>
     Test 1

@@ -1,6 +1,8 @@
 import { easeInOutQuad } from '../../src/utils';
 import animate, { animateScroll } from '../../src/utils/animate';
 
+global.CSS = { supports: jest.fn() };
+
 let initialTimestamp = 0;
 const rafStep = 100;
 
@@ -73,6 +75,8 @@ describe('animateScroll', () => {
 
         const durationInSec = 0.3;
         const durationInMs = 300;
+        const type = 'scroll';
+        const align = 'start';
 
         const el = {
             scrollLeft: startPosition,
@@ -84,6 +88,8 @@ describe('animateScroll', () => {
             finalPosition,
             durationInSec,
             easeInOutQuad,
+            type,
+            align,
             undefined
         );
 
@@ -112,6 +118,8 @@ describe('animateScroll', () => {
 
         const durationInSec = 0.3;
         const durationInMs = 300;
+        const type = 'scroll';
+        const align = 'start';
 
         const el = {
             scrollLeft: startPosition,
@@ -120,7 +128,15 @@ describe('animateScroll', () => {
 
         const onDone = jest.fn();
 
-        animateScroll(el, finalPosition, durationInSec, easeInOutQuad, onDone);
+        animateScroll(
+            el,
+            finalPosition,
+            durationInSec,
+            easeInOutQuad,
+            type,
+            align,
+            onDone
+        );
 
         const steps = durationInMs / rafStep + 1;
         expect(el.scroll).toHaveBeenCalledTimes(steps);

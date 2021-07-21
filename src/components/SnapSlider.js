@@ -1,3 +1,4 @@
+import { CENTER, SNAP } from '#utils';
 import ScrollSlider from './ScrollSlider';
 import styled from '@emotion/styled';
 
@@ -7,11 +8,16 @@ const SnapSlider = styled(ScrollSlider)`
     -webkit-overflow-scrolling: touch; /* For safari */
 
     & > * {
-        scroll-snap-align: center;
+        scroll-snap-align: ${({ align }) => align};
         scroll-snap-stop: always;
     }
 `;
 
 SnapSlider.displayName = 'SnapSlider';
+
+SnapSlider.defaultProps = {
+    type: SNAP,
+    align: CENTER,
+};
 
 export default SnapSlider;

@@ -47,6 +47,7 @@ const Template = (args) => (
             itemsToScroll={args.itemsToScroll}
         >
             <SnapSlider
+                align={args.align}
                 animationDuration={args.animationDuration}
                 animationTimingFunction={args.animationTimingFunction}
             >
@@ -66,6 +67,7 @@ const Template = (args) => (
 
 export const SnapCarousel = Template.bind({});
 SnapCarousel.args = {
+    align: 'center',
     isInfinite: false,
     isRTL: false,
     itemsToShow: 1.25,

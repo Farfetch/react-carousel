@@ -397,6 +397,8 @@ A slider using native scroll navigation.  Variable-width items are **NOT** suppo
 | children                | Node  |          | The items for the carousel                             |
 | animationDuration       | number  | 0.3    | Animation duration                                     |
 | animationTimingFunction | function  | easeInOutQuad    | Function that determines type of animation             |
+| type | string  | 'scroll'    | engine type to determine animation             |
+
 
 #### Support for navigation components
 
@@ -439,11 +441,11 @@ It fallback to the [`SwipeSlider`](#SwipeSlider) for browser with no support.
 | children       | Node                    |          | The items for the carousel                                                 |
 | animationDuration       | number  | 0.3    | Animation duration                                     |
 | animationTimingFunction | function  | easeInOutQuad    | Function that determines type of animation             |
+| type | string  | 'snap'    | engine type to determine animation             |
+| align | string  | 'center'    | slider content alignment             |
 
 
 #### Support for navigation components
-
-The ScrollSlider **doesn't** work with the [`Arrow`](#Arrow) component, due to snap point support.
 
 It supports the [`Bullets`](#Bullets) component.
 
