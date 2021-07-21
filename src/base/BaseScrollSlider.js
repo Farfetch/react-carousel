@@ -1,4 +1,10 @@
-import { animateScroll, easeInOutQuad, renderSlides } from '#utils';
+import {
+    SCROLL,
+    START,
+    animateScroll,
+    easeInOutQuad,
+    renderSlides,
+} from '#utils';
 import PropTypes from 'prop-types';
 import React, { Children, Component, createRef } from 'react';
 import debounce from 'lodash/debounce';
@@ -35,6 +41,8 @@ class BaseScrollSlider extends Component {
             setItemsLength,
             animationDuration,
             animationTimingFunction,
+            type,
+            align,
             ...othersProps
         } = this.props;
 
@@ -61,7 +69,12 @@ class BaseScrollSlider extends Component {
     }
 
     _moveToItem() {
-        const { animationDuration, animationTimingFunction } = this.props;
+        const {
+            animationDuration,
+            animationTimingFunction,
+            type,
+            align,
+        } = this.props;
         const el = this.containerRef.current;
 
         if (!el) {
@@ -81,6 +94,8 @@ class BaseScrollSlider extends Component {
             finalPosition,
             animationDuration,
             animationTimingFunction,
+            type,
+            align,
             () => {
                 this.shouldMoveToItem = false;
             }
@@ -127,6 +142,8 @@ class BaseScrollSlider extends Component {
 BaseScrollSlider.defaultProps = {
     animationDuration: 0.3,
     animationTimingFunction: easeInOutQuad,
+    type: SCROLL,
+    align: START,
 };
 
 BaseScrollSlider.propTypes = {
@@ -138,6 +155,8 @@ BaseScrollSlider.propTypes = {
     goTo: PropTypes.func.isRequired,
     animationDuration: PropTypes.number,
     animationTimingFunction: PropTypes.func,
+    type: PropTypes.string,
+    align: PropTypes.string,
 };
 
 export default BaseScrollSlider;

@@ -1,3 +1,4 @@
+export * from './constants';
 export { default as checkSnapSupport } from './checkSnapSupport';
 export { default as cloneSlide } from './cloneSlide';
 export { default as renderSlides } from './renderSlides';
