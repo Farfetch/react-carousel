@@ -41,6 +41,7 @@ exports[`<BaseUnevenItemsScrollSlider /> <BaseUnevenItemsScrollSlider /> - props
 
 exports[`<BaseUnevenItemsScrollSlider /> <BaseUnevenItemsScrollSlider /> - props should render correctly with the required props 1`] = `
 <div
+  className="unevenItemsContainer"
   onScroll={[Function]}
 >
   <div

@@ -16,7 +16,13 @@ $ yarn add @farfetch/react-carousel
 import { Carousel } from '@farfetch/react-carousel';
 ```
 This package uses [Emotion](https://emotion.sh/docs/introduction) for styling. 
-We include components with default styling that can be extended or changed with emotion. We also include Base components that only contain logic, if a version without any kind of styling is needed, a blank slate, these are available.
+We include components with default styling that can be extended or changed with emotion. This is the preferred method due to its simplicity.
+
+We also include Base components than can be strictly logical, or can have base css classes applied by importing the default ´styles.css´ file
+
+```js
+import '@farfetch/react-carousel/styles.css' 
+```
 
 ## Screenshots
 ![Example](docs/example.png)
@@ -295,6 +301,37 @@ const MyComponent = (props) => (
 );
 
 export default MyComponent;
+```
+
+### Base components using default css
+
+```js
+import '@farfetch/react-carousel/styles.css';
+import { Arrow, BaseBullets, BaseCarousel, BaseSwipeSlider } from '@farfetch/react-carousel';
+
+const MyBaseCssCarousel = (props) => (
+    <BaseCarousel isInfinite isRTL itemsToShow={ 2 } onAfterChange={ handleAfterChange }>
+        <BaseSwipeSlider>
+            <div>Item 1</div>
+            <div>Item 2</div>
+            <div>Item 3</div>
+            <div>Item 4</div>
+            <div>Item 5</div>
+        </BaseSwipeSlider>
+        
+        <BaseBullets />
+
+        <Arrow flow={ "prev" } onClick={ handleArrowClick }>
+            { ({ onClick }) => <button onClick={ onClick }>Previous</button> }
+        </Arrow>
+        
+        <Arrow flow={ "next" } onClick={ handleArrowClick }>
+            { ({ onClick }) => <button onClick={ onClick }>Next</button> }
+        </Arrow>
+    </BaseCarousel>
+);
+
+export default MyBaseCssCarousel;
 ```
 
 ## Components

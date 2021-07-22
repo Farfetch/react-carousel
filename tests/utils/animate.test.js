@@ -76,7 +76,6 @@ describe('animateScroll', () => {
         const durationInSec = 0.3;
         const durationInMs = 300;
         const type = 'scroll';
-        const align = 'start';
 
         const el = {
             scrollLeft: startPosition,
@@ -89,7 +88,6 @@ describe('animateScroll', () => {
             durationInSec,
             easeInOutQuad,
             type,
-            align,
             undefined
         );
 
@@ -119,7 +117,6 @@ describe('animateScroll', () => {
         const durationInSec = 0.3;
         const durationInMs = 300;
         const type = 'scroll';
-        const align = 'start';
 
         const el = {
             scrollLeft: startPosition,
@@ -134,7 +131,6 @@ describe('animateScroll', () => {
             durationInSec,
             easeInOutQuad,
             type,
-            align,
             onDone
         );
 

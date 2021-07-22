@@ -1,4 +1,4 @@
-import { CENTER, SNAP } from './constants';
+import { SNAP } from './constants';
 
 const animate = (callbackObj, durationInSec) => {
     const durationInMs = durationInSec * 1000 || 1000;
@@ -41,31 +41,19 @@ export const animateScroll = (
     transitionDuration,
     timingFunction,
     type,
-    align,
     onDone
 ) => {
     const startPosition = el.scrollLeft;
     const diffPosition = finalPosition - startPosition;
     const scrollBehaviorSupport = CSS.supports('scroll-behavior', 'smooth');
-    const firstChild = el.firstChild;
-    const SnapDifferential =
-        firstChild && align === CENTER
-            ? el.clientWidth - firstChild.clientWidth
-            : 0;
 
     const callback = {
         progress: (percentage) => {
-            let animationPosition;
             if (type === SNAP && !scrollBehaviorSupport) {
                 el.style.scrollSnapType = 'none';
-                animationPosition =
-                    startPosition +
-                    timingFunction(percentage) *
-                        (diffPosition - SnapDifferential / 2);
-            } else {
-                animationPosition =
-                    startPosition + timingFunction(percentage) * diffPosition;
             }
+            const animationPosition =
+                startPosition + timingFunction(percentage) * diffPosition;
             el.scroll(animationPosition, 0);
         },
         done: () => {

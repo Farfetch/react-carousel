@@ -51,6 +51,7 @@ exports[`<BaseScrollSlider /> <BaseScrollSlider /> - props should render correct
 
 exports[`<BaseScrollSlider /> <BaseScrollSlider /> - props should render correctly with the required props 1`] = `
 <div
+  className="scrollSliderContainer"
   onScroll={[Function]}
 >
   <div

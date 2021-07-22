@@ -3,7 +3,6 @@
 exports[`<ScrollSliderContainer/> should render correctly 1`] = `
 <BaseScrollSlider
   activeItem={1}
-  align="start"
   animationDuration={0.3}
   animationTimingFunction={[Function]}
   goTo={[MockFunction]}

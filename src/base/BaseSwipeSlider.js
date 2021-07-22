@@ -126,6 +126,7 @@ class BaseSwipeSlider extends Component {
             isMovementBlocked,
             setItemsLength,
             setIsMovementBlocked,
+            className = 'swipeSliderContainer',
             animationDuration,
             ...otherProps
         } = this.props;
@@ -142,6 +143,7 @@ class BaseSwipeSlider extends Component {
         return (
             <ReactSwipeEvents {...onSwiping}>
                 <div
+                    className={className}
                     style={this.sliderInfinityStyles()}
                     onTransitionEnd={this._handleTransitionEnd}
                     {...otherProps}

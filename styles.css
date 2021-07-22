@@ -1,0 +1,163 @@
+/* Bullets */
+
+
+.bullets {
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+}
+
+.bullets[data-infinite='true'] {
+    position: relative;
+    width: 9rem;
+    height: 2.1rem;
+    overflow: hidden;
+    justify-content: center;
+    white-space: nowrap;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.bullets [data-element='infiniteWrapper'] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 200ms;
+    display: flex;
+}
+
+.bullets [data-element='bullet'] {
+    position: relative;
+        width: 2.1rem;
+        height: 2.1rem;
+        display: inline-block;
+}
+
+.bullets [data-element='bullet']::before {
+    content: '';
+    position: absolute;
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 50%;
+    background-color: #b6b6b6;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.bullets [data-element='bullet'][data-active='true']::before {
+    width: 0.8rem;
+    height: 0.8rem;
+    background-color: #222222;
+}
+
+.bullets [data-element='bullet'][data-infinite='true'] {
+    position: relative;
+    width: 0.8rem;
+    height: 0.8rem;
+    margin: 0.5rem;
+    transform: scale(0.5);
+    display: inline-block;
+    border-radius: 50%;
+    transition: transform 200ms;
+    background-color: #b6b6b6;
+}
+
+.bullets [data-element='bullet'][data-infinite='true'][data-secondary='true'] {
+    transform: scale(0.75);
+    background-color: #b6b6b6;
+}
+
+.bullets [data-element='bullet'][data-infinite='true'][data-active='true'] {
+    transform: scale(0.75);
+    background-color: #b6b6b6;
+}
+
+/* Wrapper */
+
+.wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    touch-action: manipulation;
+}
+
+/* ScrollSlider */
+.scrollSliderContainer {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    transition: transform 300ms;
+    overflow-x: scroll;
+    overflow-y: hidden;
+
+    /* Hide scrollbar on Firefox */
+    scrollbar-width: none;
+
+    /* Hide scrollbar on IE */
+    -ms-overflow-style: none;
+}
+
+/* Hide scrollbar on Chrome and Safari */
+.scrollSliderContainer::-webkit-scrollbar {
+    width: 0;
+    display: none;
+}
+
+.scrollSliderContainer > * {
+    flex: 0 0 auto;
+}
+
+/* SwipeSlider */
+.swipeSliderContainer {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    transition: transform 300ms;
+}
+
+
+.swipeSliderContainer > * {
+    flex: 0 0 auto;
+}
+
+/* UnevenItemsScrollSlider */
+.unevenItemsContainer[data-infinite='true'] {
+    overflow: hidden;
+}
+
+.unevenItemsContainer[data-infinite='false'] {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    transition: transform 300ms;
+    overflow-x: scroll;
+    overflow-y: hidden;
+
+    /* Hide scrollbar on Firefox */
+    scrollbar-width: none;
+
+    /* Hide scrollbar on IE */
+    -ms-overflow-style: none;
+}
+
+.unevenItemsContainer[data-infinite='false']::-webkit-scrollbar {
+    width: 0;
+    display: none;
+}
+
+.unevenItemsContainer[data-infinite='true'] > *,
+.unevenItemsContainer[data-infinite='false'] > * {
+    flex: 0 0 auto;
+}
+
+.unevenItemsContainer [data-element='unevenItemsWrapper'] {
+    position: relative;
+    width: auto;
+    display: flex;
+    flex: 0 0 auto;
+    touch-action: none;
+}

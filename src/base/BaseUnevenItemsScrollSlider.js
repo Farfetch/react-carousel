@@ -140,6 +140,7 @@ const BaseUnevenItemsScrollSlider = (props) => {
         itemsLength,
         setItemsLength,
         isInfinite,
+        className = 'unevenItemsContainer',
         direction,
         animationDuration = 0.3,
         animationTimingFunction = easeInOutQuad,
@@ -301,7 +302,13 @@ const BaseUnevenItemsScrollSlider = (props) => {
     };
 
     return (
-        <div ref={containerRef} onScroll={handleScroll} {...otherProps}>
+        <div
+            ref={containerRef}
+            onScroll={handleScroll}
+            data-infinite={isInfinite}
+            className={className}
+            {...otherProps}
+        >
             <div
                 ref={wrapperRef}
                 data-element="unevenItemsWrapper"
@@ -328,6 +335,7 @@ BaseUnevenItemsScrollSlider.propTypes = {
     direction: PropTypes.string,
     animationDuration: PropTypes.number,
     animationTimingFunction: PropTypes.func,
+    className: PropTypes.string,
 };
 
 BaseUnevenItemsScrollSlider.defaultProps = {

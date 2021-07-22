@@ -30,10 +30,81 @@ exports[`<Bullets> - props for default should render correctly the basic 1`] = `
   transform: translateX(-50%);
 }
 
-<BaseBullets
+.emotion-0 [data-element='infiniteWrapper'] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: -webkit-transform 200ms;
+  transition: transform 200ms;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-0 [data-element='bullet'] {
+  position: relative;
+  width: 2.1rem;
+  height: 2.1rem;
+  display: inline-block;
+}
+
+.emotion-0 [data-element='bullet']::before {
+  content: '';
+  position: absolute;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  background-color: #b6b6b6;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.emotion-0 [data-element='bullet'][data-active='true']::before {
+  width: 0.8rem;
+  height: 0.8rem;
+  background-color: #222222;
+}
+
+.emotion-0 [data-element='bullet'][data-infinite='true'] {
+  position: relative;
+  width: 0.8rem;
+  height: 0.8rem;
+  margin: 0.5rem;
+  -webkit-transform: scale(0.5);
+  -moz-transform: scale(0.5);
+  -ms-transform: scale(0.5);
+  transform: scale(0.5);
+  display: inline-block;
+  border-radius: 50%;
+  -webkit-transition: -webkit-transform 200ms;
+  transition: transform 200ms;
+  background-color: #b6b6b6;
+}
+
+.emotion-0 [data-element='bullet'][data-infinite='true'][data-secondary='true'] {
+  -webkit-transform: scale(0.75);
+  -moz-transform: scale(0.75);
+  -ms-transform: scale(0.75);
+  transform: scale(0.75);
+  background-color: #b6b6b6;
+}
+
+.emotion-0 [data-element='bullet'][data-infinite='true'][data-active='true'] {
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  background-color: #222222;
+}
+
+<BulletsContainer
   activeItem={0}
   className="emotion-0"
   itemsLength={3}
-  itemsToScroll={1}
 />
 `;
