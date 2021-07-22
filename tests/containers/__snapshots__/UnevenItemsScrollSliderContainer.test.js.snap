@@ -25,6 +25,7 @@ exports[`<UnevenItemsScrollSliderContainer/> should render correctly 1`] = `
     }
   >
     <div
+      className="unevenItemsContainer"
       onScroll={[Function]}
     >
       <div

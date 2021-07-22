@@ -3,6 +3,7 @@ export { CarouselContext, CarouselProvider } from '#context';
 export { BaseCarousel } from '#base';
 export {
     Arrow,
+    Bullets,
     Carousel,
     SnapSlider,
     ScrollSlider,
@@ -10,7 +11,7 @@ export {
     UnevenItemsScrollSlider,
 } from '#components';
 export {
-    Bullets,
+    BaseBullets,
     BaseSwipeSlider,
     BaseScrollSlider,
     BaseUnevenItemsScrollSlider,

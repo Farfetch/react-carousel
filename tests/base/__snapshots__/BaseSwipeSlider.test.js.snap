@@ -8,6 +8,7 @@ exports[`<BaseSwipeSlider /> props should add cloned slides and update styles in
   threshold={10}
 >
   <div
+    className="swipeSliderContainer"
     direction={null}
     onTransitionEnd={[Function]}
     style={
@@ -104,6 +105,7 @@ exports[`<BaseSwipeSlider /> props should not add clone slides when have less ch
   threshold={10}
 >
   <div
+    className="swipeSliderContainer"
     direction={null}
     onTransitionEnd={[Function]}
     style={
@@ -147,6 +149,7 @@ exports[`<BaseSwipeSlider /> props should render correctly the sliders cloned fr
   threshold={10}
 >
   <div
+    className="swipeSliderContainer"
     direction={null}
     onTransitionEnd={[Function]}
     style={

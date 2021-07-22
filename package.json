@@ -14,7 +14,8 @@
   "source": "./src/index.js",
   "files": [
     "lib",
-    "es"
+    "es",
+    "styles.css"
   ],
   "publishConfig": {
     "access": "public"

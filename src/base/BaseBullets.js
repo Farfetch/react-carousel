@@ -1,5 +1,3 @@
-import Bullet from '#components/Bullet';
-import BulletsInfiniteWrapper from '#components/BulletsInfiniteWrapper';
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
 
@@ -37,25 +35,28 @@ class BaseBullets extends PureComponent {
             itemsLength,
             isRTL,
             itemsToScroll,
+            className = 'bullets',
             ...otherProps
         } = this.props;
         const { isInfinite } = this.state;
 
         return (
             <div
+                className={className}
                 aria-hidden="true"
                 data-infinite={isInfinite}
                 data-active={activeItem}
                 {...otherProps}
             >
                 {isInfinite ? (
-                    <BulletsInfiniteWrapper
+                    <div
+                        data-element="infiniteWrapper"
                         style={{
                             transform: `translate(${this.getTranslationValue()}rem)`,
                         }}
                     >
                         {this.getBullets()}
-                    </BulletsInfiniteWrapper>
+                    </div>
                 ) : (
                     this.getBullets()
                 )}
@@ -107,8 +108,9 @@ class BaseBullets extends PureComponent {
 
         for (let i = 0; i < bullets; i++) {
             itemsNodes.push(
-                <Bullet
+                <span
                     key={i}
+                    data-element="bullet"
                     data-infinite={isInfinite}
                     data-secondary={isSecondary(i)}
                     data-active={activeBullet === i}
@@ -130,6 +132,7 @@ BaseBullets.propTypes = {
     isRTL: PropTypes.bool,
     /* SliderNav theme */
     itemsToScroll: PropTypes.number,
+    className: PropTypes.string,
 };
 
 BaseBullets.defaultProps = {

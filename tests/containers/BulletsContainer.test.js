@@ -26,10 +26,10 @@ describe('<BulletsContainer/>', () => {
             ...mockContextCarousel,
         });
 
-        expect(tree.find('Bullets').prop('activeItem')).toBe(
+        expect(tree.find('BaseBullets').prop('activeItem')).toBe(
             mockContextCarousel.activeItem
         );
-        expect(tree.find('Bullets').prop('itemsLength')).toBe(
+        expect(tree.find('BaseBullets').prop('itemsLength')).toBe(
             mockContextCarousel.itemsLength
         );
     });

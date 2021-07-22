@@ -12,6 +12,7 @@ class BaseCarousel extends Component {
             itemsToScroll,
             onAfterChange,
             startItem,
+            className = 'wrapper',
             ...otherProps
         } = this.props;
 
@@ -26,7 +27,9 @@ class BaseCarousel extends Component {
 
         return (
             <CarouselProvider {...providerProps}>
-                <div {...otherProps}>{children}</div>
+                <div className={className} {...otherProps}>
+                    {children}
+                </div>
             </CarouselProvider>
         );
     }
