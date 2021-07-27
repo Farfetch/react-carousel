@@ -1,3 +1,26 @@
+## [2.0.0-beta.1](https://github.com/Farfetch/react-carousel/compare/v1.2.0...v2.0.0-beta.1) (2021-07-27)
+
+
+### ⚠ BREAKING CHANGES
+
+* **docs:** package now uses emotion for styling
+
+### Features
+
+* **carousel:** add bullet base and styled components, general organization ([1211791](https://github.com/Farfetch/react-carousel/commit/121179100b930c41e0677cf9b4fcbf4bc302af21))
+* **carousel:** add tests to base and styled components ([76e2483](https://github.com/Farfetch/react-carousel/commit/76e2483a5bcc7686426ea2ff1a106cda91ca4b65))
+* **carousel:** added basic css support to base components, updated docs and add stories ([9c24acc](https://github.com/Farfetch/react-carousel/commit/9c24accbf39f9391685f44923b071d3567e20ecb))
+* **carousel:** provided styled and based classes for scroll, snap and swipe sliders ([f6729ed](https://github.com/Farfetch/react-carousel/commit/f6729ede4767b843c3835dbc77e7182cf6d50674))
+* **carousel:** support button navigation on SnapSlider ([a81915e](https://github.com/Farfetch/react-carousel/commit/a81915ebf95655b795f43c0e4d7d6772f830bfda))
+* **docs:** add storybook ([f219f57](https://github.com/Farfetch/react-carousel/commit/f219f57066580c69f1a08ef2e3fbf712e2204569))
+* **docs:** update docs to account for customizable animations ([ab50ad1](https://github.com/Farfetch/react-carousel/commit/ab50ad1312c1a4f05fcfe359c32e78c184e03ccc))
+
+
+### Bug Fixes
+
+* **deps:** move emotion packages to peer dependencies, updated docs to account for this change ([27df019](https://github.com/Farfetch/react-carousel/commit/27df0195d0edb44e5489274a257240abe944ce80))
+* **docs:** remove storybook-static from repo ([5aeefdb](https://github.com/Farfetch/react-carousel/commit/5aeefdb83d4385b5eb8481d9bdf976e80494056e))
+
 ## [1.2.0](https://github.com/Farfetch/react-carousel/compare/v1.1.0...v1.2.0) (2021-07-08)
 
 
