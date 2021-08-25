@@ -1,6 +1,6 @@
 import { CarouselProvider } from '#context';
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import React, { Component, forwardRef } from 'react';
 import cx from 'classnames';
 
 class Carousel extends Component {
@@ -14,6 +14,7 @@ class Carousel extends Component {
             itemsToScroll,
             onAfterChange,
             startItem,
+            innerRef,
             ...otherProps
         } = this.props;
 
@@ -28,7 +29,11 @@ class Carousel extends Component {
 
         return (
             <CarouselProvider {...providerProps}>
-                <div className={cx('wrapper', className)} {...otherProps}>
+                <div
+                    ref={innerRef}
+                    className={cx('wrapper', className)}
+                    {...otherProps}
+                >
                     {children}
                 </div>
             </CarouselProvider>
@@ -45,10 +50,16 @@ Carousel.propTypes = {
     onAfterChange: PropTypes.func,
     itemsToScroll: PropTypes.number,
     startItem: PropTypes.number,
+    innerRef: PropTypes.oneOfType([
+        PropTypes.func,
+        PropTypes.shape({ current: PropTypes.elementType }),
+    ]),
 };
 
 Carousel.defaultProps = {
     itemsToScroll: 1,
 };
 
-export default Carousel;
+export default forwardRef(function CarouselForwardingRef(props, ref) {
+    return <Carousel innerRef={ref} {...props} />;
+});

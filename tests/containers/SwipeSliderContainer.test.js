@@ -1,5 +1,6 @@
 import { createSerializer } from 'enzyme-to-json';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
+import CarouselContext from '../../src/context/CarouselContext';
 import React from 'react';
 import SwipeSliderContainer from '../../src/containers/SwipeSliderContainer';
 
@@ -11,6 +12,9 @@ const mockContextCarousel = {
     setItemsLength: jest.fn(),
     goNext: jest.fn(),
     goPrev: jest.fn(),
+    containerRef: {
+        current: null,
+    },
 };
 
 const mockChildren = <div />;
@@ -21,11 +25,11 @@ beforeAll(() => {
 
 describe('<SwipeSliderContainer/>', () => {
     it('should render correctly', () => {
-        const tree = shallow(
-            <SwipeSliderContainer>{mockChildren}</SwipeSliderContainer>
-        ).renderProp('children')({
-            ...mockContextCarousel,
-        });
+        const tree = mount(
+            <CarouselContext.Provider value={mockContextCarousel}>
+                <SwipeSliderContainer>{mockChildren}</SwipeSliderContainer>
+            </CarouselContext.Provider>
+        );
 
         expect(tree).toMatchSnapshot();
     });
@@ -34,24 +38,24 @@ describe('<SwipeSliderContainer/>', () => {
         const mockTheme = {
             container: 'container',
         };
-        const tree = shallow(
-            <SwipeSliderContainer data-testId="test" theme={mockTheme}>
-                {mockChildren}
-            </SwipeSliderContainer>
-        ).renderProp('children')({
-            ...mockContextCarousel,
-        });
+        const tree = mount(
+            <CarouselContext.Provider value={mockContextCarousel}>
+                <SwipeSliderContainer data-testId="test" theme={mockTheme}>
+                    {mockChildren}
+                </SwipeSliderContainer>
+            </CarouselContext.Provider>
+        );
 
         expect(tree.find('SwipeSlider').prop('data-testId')).toBe('test');
         expect(tree.find('SwipeSlider').prop('theme')).toEqual(mockTheme);
     });
 
     it('should render correctly with correct Context', () => {
-        const tree = shallow(
-            <SwipeSliderContainer>{mockChildren}</SwipeSliderContainer>
-        ).renderProp('children')({
-            ...mockContextCarousel,
-        });
+        const tree = mount(
+            <CarouselContext.Provider value={mockContextCarousel}>
+                <SwipeSliderContainer>{mockChildren}</SwipeSliderContainer>
+            </CarouselContext.Provider>
+        );
 
         expect(tree.find('SwipeSlider').prop('activeItem')).toBe(
             mockContextCarousel.activeItem

@@ -79,8 +79,12 @@ class Bullets extends PureComponent {
     }
 
     getTranslationValue() {
-        const { translationValue, maxBullets, bullets, activeBullet } =
-            this.state;
+        const {
+            translationValue,
+            maxBullets,
+            bullets,
+            activeBullet,
+        } = this.state;
 
         // If active slide is in first, second or third position translation doesn't happen
         if (bullets <= maxBullets || activeBullet <= 2) {

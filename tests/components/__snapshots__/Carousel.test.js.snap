@@ -1,20 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Carousel /> props should render children and custom attrs correctly 1`] = `
-<CarouselProvider
-  isInfinite={false}
-  isRTL={false}
+<Carousel
+  className="foo"
+  data-attr="bar"
+  innerRef={null}
   itemsToScroll={1}
-  itemsToShow={1}
-  startItem={0}
 >
-  <div
-    className="wrapper foo"
-    data-attr="bar"
-  >
-    <div>
-      I accept children.
-    </div>
+  <div>
+    I accept children.
   </div>
-</CarouselProvider>
+</Carousel>
 `;

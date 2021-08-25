@@ -1,6 +1,6 @@
-import { CarouselContext } from '#context';
 import { UnevenItemsScrollSlider } from '#components';
-import React, { useContext } from 'react';
+import { useCarousel } from '#hooks';
+import React from 'react';
 
 const UnevenItemsScrollSliderContainer = (props) => {
     const {
@@ -11,11 +11,13 @@ const UnevenItemsScrollSliderContainer = (props) => {
         goTo,
         isInfinite,
         direction,
-    } = useContext(CarouselContext);
+        containerRef,
+    } = useCarousel();
 
     return (
         <UnevenItemsScrollSlider
             {...props}
+            ref={containerRef}
             isRTL={isRTL}
             activeItem={activeItem}
             itemsLength={itemsLength}

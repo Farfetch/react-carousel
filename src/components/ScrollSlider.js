@@ -1,10 +1,10 @@
 import { animateScroll, renderSlides } from '#utils';
 import PropTypes from 'prop-types';
-import React, { Children, Component, createRef } from 'react';
+import React, { Children, Component, forwardRef } from 'react';
 import cx from 'classnames';
 import debounce from 'lodash/debounce';
 
-class ScrollSlider extends Component {
+export class ScrollSlider extends Component {
     constructor(props) {
         super(props);
         this._verifyActiveItemDebounce = debounce(this._verifyActiveItem, 25);
@@ -13,7 +13,6 @@ class ScrollSlider extends Component {
         this.activeItem = 0;
         this.shouldMoveToItem = false;
         this.isPreventingScroll = false;
-        this.containerRef = createRef();
     }
 
     componentDidMount() {
@@ -36,6 +35,7 @@ class ScrollSlider extends Component {
             itemsToShow,
             limitScroll,
             setItemsLength,
+            containerRef,
             ...othersProps
         } = this.props;
 
@@ -52,7 +52,7 @@ class ScrollSlider extends Component {
 
         return (
             <div
-                ref={this.containerRef}
+                ref={containerRef}
                 className={cx('slider', 'scrollSliderContainer', className)}
                 onScroll={this._handleScroll}
                 {...othersProps}
@@ -63,14 +63,14 @@ class ScrollSlider extends Component {
     }
 
     _moveToItem() {
-        const el = this.containerRef.current;
+        const { activeItem, itemsToShow, isRTL, containerRef } = this.props;
+        const el = containerRef.current;
 
         if (!el) {
             return null;
         }
 
         const { offsetWidth } = el;
-        const { activeItem, itemsToShow, isRTL } = this.props;
 
         const itemToMoveTo = isRTL
             ? this.itemsLength - 2 - activeItem
@@ -84,7 +84,7 @@ class ScrollSlider extends Component {
 
     /* Don't work on Chrome, but work on iOS */
     _forceScrollSnapStop(newPosition, newIndex) {
-        const el = this.containerRef.current;
+        const el = this.props.containerRef.current;
 
         if (!el) {
             return null;
@@ -103,8 +103,8 @@ class ScrollSlider extends Component {
     }
 
     _verifyActiveItem() {
-        const { goTo, itemsToShow, isRTL } = this.props;
-        const { offsetWidth, scrollLeft } = this.containerRef.current;
+        const { goTo, itemsToShow, isRTL, containerRef } = this.props;
+        const { offsetWidth, scrollLeft } = containerRef.current;
 
         const activeFraction =
             Math.round((scrollLeft / offsetWidth) * 100) / 100;
@@ -135,10 +135,10 @@ class ScrollSlider extends Component {
             return null;
         }
 
-        const { limitScroll, itemsToShow } = this.props;
+        const { limitScroll, itemsToShow, containerRef } = this.props;
 
         if (limitScroll) {
-            const { offsetWidth, scrollLeft } = this.containerRef.current;
+            const { offsetWidth, scrollLeft } = containerRef.current;
 
             // When scrolling too fast, we want to prevent scrolling 2 slides at once...
             const newPrevIndex = this.activeItem - 1;
@@ -167,6 +167,12 @@ ScrollSlider.propTypes = {
     setItemsLength: PropTypes.func.isRequired,
     goTo: PropTypes.func.isRequired,
     limitScroll: PropTypes.bool,
+    containerRef: PropTypes.oneOfType([
+        PropTypes.func,
+        PropTypes.shape({ current: PropTypes.elementType }),
+    ]),
 };
 
-export default ScrollSlider;
+export default forwardRef(function ScrollSliderForwardingRef(props, ref) {
+    return <ScrollSlider containerRef={ref} {...props} />;
+});

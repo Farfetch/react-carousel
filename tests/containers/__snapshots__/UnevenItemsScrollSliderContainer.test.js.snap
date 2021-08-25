@@ -2,12 +2,11 @@
 
 exports[`<UnevenItemsScrollSliderContainer/> should render correctly 1`] = `
 <UnevenItemsScrollSliderContainer>
-  <UnevenItemsScrollSlider
+  <ForwardRef(UnevenForwardingRef)
     activeItem={1}
     goTo={[MockFunction]}
     isRTL={false}
     itemsLength={1}
-    ratioToScroll={1}
     setItemsLength={
       [MockFunction] {
         "calls": Array [
@@ -24,23 +23,61 @@ exports[`<UnevenItemsScrollSliderContainer/> should render correctly 1`] = `
       }
     }
   >
-    <div
-      className="slider scrollSliderContainer"
-      onScroll={[Function]}
+    <UnevenItemsScrollSlider
+      activeItem={1}
+      containerRef={
+        Object {
+          "current": <div
+            class="slider scrollSliderContainer"
+          >
+            <div
+              class="unevenItemsWrapper"
+            >
+              <div
+                class="slide"
+              />
+            </div>
+          </div>,
+        }
+      }
+      goTo={[MockFunction]}
+      isRTL={false}
+      itemsLength={1}
+      ratioToScroll={1}
+      setItemsLength={
+        [MockFunction] {
+          "calls": Array [
+            Array [
+              NaN,
+            ],
+          ],
+          "results": Array [
+            Object {
+              "type": "return",
+              "value": undefined,
+            },
+          ],
+        }
+      }
     >
       <div
-        className="unevenItemsWrapper"
-        onTouchEnd={[Function]}
-        onTouchMove={[Function]}
-        onTouchStart={[Function]}
+        className="slider scrollSliderContainer"
+        onScroll={[Function]}
       >
         <div
-          className="slide"
-          key="null/.0"
-          style={Object {}}
-        />
+          className="unevenItemsWrapper"
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+        >
+          <div
+            className="slide"
+            key="null/.0"
+            style={Object {}}
+          />
+        </div>
       </div>
-    </div>
-  </UnevenItemsScrollSlider>
+    </UnevenItemsScrollSlider>
+  </ForwardRef(UnevenForwardingRef)>
 </UnevenItemsScrollSliderContainer>
 `;

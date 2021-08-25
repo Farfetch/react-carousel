@@ -6,6 +6,9 @@ import React from 'react';
 const mockContextCarousel = {
     activeItem: 1,
     itemsLength: 10,
+    containerRef: {
+        current: null,
+    },
 };
 
 beforeAll(() => {

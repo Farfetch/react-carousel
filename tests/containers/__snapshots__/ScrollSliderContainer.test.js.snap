@@ -1,13 +1,76 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<ScrollSliderContainer/> should render correctly 1`] = `
-<ScrollSlider
-  activeItem={1}
-  goTo={[MockFunction]}
-  isRTL={false}
-  itemsToShow={2}
-  setItemsLength={[MockFunction]}
->
-  <div />
-</ScrollSlider>
+<ScrollSliderContainer>
+  <ForwardRef(ScrollSliderForwardingRef)
+    activeItem={1}
+    goTo={[MockFunction]}
+    isRTL={false}
+    itemsToShow={2}
+    setItemsLength={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            1,
+          ],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      }
+    }
+  >
+    <ScrollSlider
+      activeItem={1}
+      containerRef={
+        Object {
+          "current": <div
+            class="slider scrollSliderContainer"
+          >
+            <div
+              class="slide"
+              style="width: 50.000000%;"
+            />
+          </div>,
+        }
+      }
+      goTo={[MockFunction]}
+      isRTL={false}
+      itemsToShow={2}
+      setItemsLength={
+        [MockFunction] {
+          "calls": Array [
+            Array [
+              1,
+            ],
+          ],
+          "results": Array [
+            Object {
+              "type": "return",
+              "value": undefined,
+            },
+          ],
+        }
+      }
+    >
+      <div
+        className="slider scrollSliderContainer"
+        onScroll={[Function]}
+      >
+        <div
+          className="slide"
+          key="null/.0"
+          style={
+            Object {
+              "width": "50.000000%",
+            }
+          }
+        />
+      </div>
+    </ScrollSlider>
+  </ForwardRef(ScrollSliderForwardingRef)>
+</ScrollSliderContainer>
 `;

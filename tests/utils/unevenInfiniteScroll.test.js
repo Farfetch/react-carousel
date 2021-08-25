@@ -47,6 +47,9 @@ const mockProps = {
     setItemsLength: jest.fn(),
     goTo: jest.fn(),
     isInfinite: true,
+    ref: {
+        current: null,
+    },
 };
 
 describe('unevenInfiniteScroll', () => {

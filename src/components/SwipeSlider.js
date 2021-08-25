@@ -1,13 +1,13 @@
 import { cloneSlide, renderSlides } from '#utils';
 import PropTypes from 'prop-types';
-import React, { Children, Component } from 'react';
+import React, { Children, Component, forwardRef } from 'react';
 import ReactSwipeEvents from 'react-swipe-events';
 import cx from 'classnames';
 
 const LEFT_KEY_CODE = 37;
 const RIGHT_KEY_CODE = 39;
 
-class SwipeSlider extends Component {
+export class SwipeSlider extends Component {
     static getDerivedStateFromProps(props, state) {
         const {
             children,
@@ -128,6 +128,7 @@ class SwipeSlider extends Component {
             isMovementBlocked,
             setItemsLength,
             setIsMovementBlocked,
+            containerRef,
             ...otherProps
         } = this.props;
         const { hasEnoughChildren } = this.state;
@@ -143,6 +144,7 @@ class SwipeSlider extends Component {
         return (
             <ReactSwipeEvents {...onSwiping}>
                 <div
+                    ref={containerRef}
                     className={cx('slider', className)}
                     style={this.sliderInfinityStyles()}
                     onTransitionEnd={this._handleTransitionEnd}
@@ -272,6 +274,12 @@ SwipeSlider.propTypes = {
     setIsMovementBlocked: PropTypes.func.isRequired,
     isMovementBlocked: PropTypes.bool,
     direction: PropTypes.string,
+    containerRef: PropTypes.oneOfType([
+        PropTypes.func,
+        PropTypes.shape({ current: PropTypes.elementType }),
+    ]),
 };
 
-export default SwipeSlider;
+export default forwardRef(function SwipeSliderForwardingRef(props, ref) {
+    return <SwipeSlider containerRef={ref} {...props} />;
+});

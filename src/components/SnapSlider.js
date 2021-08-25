@@ -1,10 +1,10 @@
 import { ScrollSlider, SwipeSlider } from '#containers';
 import { checkSnapSupport } from '#utils';
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import React, { Component, forwardRef } from 'react';
 import cx from 'classnames';
 
-class SnapSlider extends Component {
+export class SnapSlider extends Component {
     constructor(props) {
         super(props);
 
@@ -21,22 +21,25 @@ class SnapSlider extends Component {
     }
 
     render() {
+        const { limitScroll, containerRef, ...otherProps } = this.props;
+
         if (!this.state.isMounted || checkSnapSupport()) {
             return (
                 <ScrollSlider
-                    {...this.props}
+                    {...otherProps}
+                    limitScroll={limitScroll}
+                    ref={containerRef}
                     className={cx(this.props.className, 'snapSliderContainer')}
                 />
             );
         }
-
-        const { limitScroll, ...otherProps } = this.props;
 
         return (
             <SwipeSlider
                 {...otherProps}
                 disableSwipe={false}
                 hasKeysNavigation={false}
+                ref={containerRef}
             />
         );
     }
@@ -50,6 +53,12 @@ SnapSlider.propTypes = {
     children: PropTypes.node.isRequired,
     className: PropTypes.string,
     limitScroll: PropTypes.bool,
+    containerRef: PropTypes.oneOfType([
+        PropTypes.func,
+        PropTypes.shape({ current: PropTypes.elementType }),
+    ]),
 };
 
-export default SnapSlider;
+export default forwardRef(function SnapSliderForwardingRef(props, ref) {
+    return <SnapSlider containerRef={ref} {...props} />;
+});

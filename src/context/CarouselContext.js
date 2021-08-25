@@ -14,4 +14,5 @@ export default React.createContext({
     itemsLength: 0,
     itemsToScroll: 0,
     direction: null,
+    containerRef: null,
 });

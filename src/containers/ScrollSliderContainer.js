@@ -4,7 +4,14 @@ import React from 'react';
 
 const ScrollSliderContainer = (props) => (
     <CarouselContext.Consumer>
-        {({ activeItem, isRTL, itemsToShow, setItemsLength, goTo }) => (
+        {({
+            activeItem,
+            isRTL,
+            itemsToShow,
+            setItemsLength,
+            goTo,
+            containerRef,
+        }) => (
             <ScrollSlider
                 {...props}
                 isRTL={isRTL}
@@ -12,6 +19,7 @@ const ScrollSliderContainer = (props) => (
                 itemsToShow={itemsToShow}
                 setItemsLength={setItemsLength}
                 goTo={goTo}
+                ref={containerRef}
             />
         )}
     </CarouselContext.Consumer>
