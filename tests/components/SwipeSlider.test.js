@@ -1,7 +1,7 @@
+import { SwipeSlider } from '../../src/components/SwipeSlider';
 import { createSerializer } from 'enzyme-to-json';
 import { shallow } from 'enzyme';
 import React from 'react';
-import SwipeSlider from '../../src/components/SwipeSlider';
 
 beforeAll(() => {
     jest.useFakeTimers();
@@ -24,6 +24,9 @@ const mocksPropsSwipeSlider = {
     setIsMovementBlocked: jest.fn(),
     isMovementBlocked: false,
     direction: null,
+    containerRef: {
+        current: null,
+    },
 };
 
 const children = [

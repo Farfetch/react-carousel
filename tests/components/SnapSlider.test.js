@@ -1,7 +1,7 @@
+import { SnapSlider } from '../../src/components/SnapSlider';
 import { createSerializer } from 'enzyme-to-json';
 import { shallow } from 'enzyme';
 import React from 'react';
-import SnapSlider from '../../src/components/SnapSlider';
 import checkSnapSupport from '../../src/utils/checkSnapSupport';
 
 jest.mock('../../src/utils/checkSnapSupport');

@@ -7,3 +7,4 @@ export {
     ScrollSlider,
     UnevenItemsScrollSlider,
 } from '#containers';
+export { useCarousel } from './hooks';

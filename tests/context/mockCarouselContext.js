@@ -5,4 +5,7 @@ export default {
     goTo: jest.fn(),
     itemsLength: 0,
     activeItem: 0,
+    containerRef: {
+        current: null,
+    },
 };
