@@ -1,6 +1,6 @@
 import { animateScroll, infiniteScroll, renderSlides } from '#utils';
 import PropTypes from 'prop-types';
-import React, { useCallback, useEffect, useRef } from 'react';
+import React, { forwardRef, useCallback, useEffect, useRef } from 'react';
 import ResizeObserver from 'resize-observer-polyfill';
 import cx from 'classnames';
 import debounce from 'lodash/debounce';
@@ -138,10 +138,10 @@ const UnevenItemsScrollSlider = (props) => {
         setItemsLength,
         isInfinite,
         direction,
+        containerRef,
         ...otherProps
     } = props;
 
-    const containerRef = useRef(null);
     const wrapperRef = useRef(null);
 
     useEffect(() => {
@@ -155,7 +155,7 @@ const UnevenItemsScrollSlider = (props) => {
         if (itemsLength !== newItemsLength) {
             setItemsLength(newItemsLength);
         }
-    }, [isInfinite, itemsLength, ratioToScroll, setItemsLength]);
+    }, [isInfinite, itemsLength, ratioToScroll, setItemsLength, containerRef]);
 
     useUpdateEffect(() => {
         const displayedActiveItem = calculateActiveItem(
@@ -237,6 +237,7 @@ const UnevenItemsScrollSlider = (props) => {
         goTo,
         goToOnSizeChange,
         setItemsLength,
+        containerRef,
     ]);
 
     const handleResize = useCallback(
@@ -325,10 +326,16 @@ UnevenItemsScrollSlider.propTypes = {
     ratioToScroll: PropTypes.number,
     isInfinite: PropTypes.bool,
     direction: PropTypes.string,
+    containerRef: PropTypes.oneOfType([
+        PropTypes.func,
+        PropTypes.shape({ current: PropTypes.elementType }),
+    ]),
 };
 
 UnevenItemsScrollSlider.defaultProps = {
     ratioToScroll: 1,
 };
 
-export default UnevenItemsScrollSlider;
+export default forwardRef(function UnevenForwardingRef(props, ref) {
+    return <UnevenItemsScrollSlider containerRef={ref} {...props} />;
+});

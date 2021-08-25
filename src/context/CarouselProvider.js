@@ -1,6 +1,6 @@
 import { CarouselContext } from '#context';
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import React, { Component, createRef } from 'react';
 
 class CarouselProvider extends Component {
     static getDerivedStateFromProps(props, state) {
@@ -38,6 +38,7 @@ class CarouselProvider extends Component {
             goPrev: this._goPrev,
             itemsToScroll: 1,
             direction: null,
+            containerRef: createRef(),
         };
     }
 

@@ -15,6 +15,7 @@ const SwipeSliderContainer = (props) => (
             setIsMovementBlocked,
             isMovementBlocked,
             direction,
+            containerRef,
         }) => (
             <SwipeSlider
                 {...props}
@@ -28,6 +29,7 @@ const SwipeSliderContainer = (props) => (
                 setIsMovementBlocked={setIsMovementBlocked}
                 isMovementBlocked={isMovementBlocked}
                 direction={direction}
+                ref={containerRef}
             />
         )}
     </CarouselContext.Consumer>

@@ -48,6 +48,9 @@ const mockRequiredProps = {
     itemsLength: 5,
     setItemsLength: jest.fn(),
     goTo: jest.fn(),
+    ref: {
+        current: null,
+    },
 };
 
 describe('<UnevenItemsScrollSlider />', () => {

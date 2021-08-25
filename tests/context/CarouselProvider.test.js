@@ -38,8 +38,11 @@ describe('<CarouselProvider/>', () => {
             itemsToScroll: 1,
         };
 
+        const { containerRef, ...currentValue } = wrapper.prop('value');
+
         expect(wrapper).toMatchSnapshot();
-        expect(wrapper.prop('value')).toEqual(expectedContext);
+        expect(containerRef).not.toBeNull();
+        expect(currentValue).toEqual(expectedContext);
     });
 
     test('should set the context correctly based on the props', () => {
@@ -67,7 +70,10 @@ describe('<CarouselProvider/>', () => {
             itemsToScroll: 1,
         };
 
-        expect(wrapper.prop('value')).toEqual(expectedContext);
+        const { containerRef, ...currentValue } = wrapper.prop('value');
+
+        expect(containerRef).not.toBeNull();
+        expect(currentValue).toEqual(expectedContext);
     });
 
     describe('_setItemsLength()', () => {

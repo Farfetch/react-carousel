@@ -1,87 +1,76 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<UnevenItemsScrollSlider /> <UnevenItemsScrollSlider /> - props should render correctly with additional props 1`] = `
-<div
-  className="slider dummyClassName scrollSliderContainer"
-  onScroll={[Function]}
+<UnevenItemsScrollSlider
+  activeItem={0}
+  className="dummyClassName"
+  containerRef={
+    Object {
+      "current": null,
+    }
+  }
+  goTo={[MockFunction]}
+  isRTL={false}
+  itemsLength={5}
+  ratioToScroll={1}
+  setItemsLength={[MockFunction]}
 >
   <div
-    className="unevenItemsWrapper"
-    onTouchEnd={[Function]}
-    onTouchMove={[Function]}
-    onTouchStart={[Function]}
+    key="0"
   >
-    <div
-      className="slide"
-      key=".$0"
-      style={Object {}}
-    >
-      First slide
-    </div>
-    <div
-      className="slide"
-      key=".$1"
-      style={Object {}}
-    >
-      Second slide
-    </div>
-    <div
-      className="slide"
-      key=".$2"
-      style={Object {}}
-    >
-      Third slide
-    </div>
-    <div
-      className="slide"
-      key=".$3"
-      style={Object {}}
-    >
-      Fourth slide
-    </div>
+    First slide
   </div>
-</div>
+  <div
+    key="1"
+  >
+    Second slide
+  </div>
+  <div
+    key="2"
+  >
+    Third slide
+  </div>
+  <div
+    key="3"
+  >
+    Fourth slide
+  </div>
+</UnevenItemsScrollSlider>
 `;
 
 exports[`<UnevenItemsScrollSlider /> <UnevenItemsScrollSlider /> - props should render correctly with the required props 1`] = `
-<div
-  className="slider scrollSliderContainer"
-  onScroll={[Function]}
+<UnevenItemsScrollSlider
+  activeItem={0}
+  containerRef={
+    Object {
+      "current": null,
+    }
+  }
+  goTo={[MockFunction]}
+  isRTL={false}
+  itemsLength={5}
+  ratioToScroll={1}
+  setItemsLength={[MockFunction]}
 >
   <div
-    className="unevenItemsWrapper"
-    onTouchEnd={[Function]}
-    onTouchMove={[Function]}
-    onTouchStart={[Function]}
+    key="0"
   >
-    <div
-      className="slide"
-      key=".$0"
-      style={Object {}}
-    >
-      First slide
-    </div>
-    <div
-      className="slide"
-      key=".$1"
-      style={Object {}}
-    >
-      Second slide
-    </div>
-    <div
-      className="slide"
-      key=".$2"
-      style={Object {}}
-    >
-      Third slide
-    </div>
-    <div
-      className="slide"
-      key=".$3"
-      style={Object {}}
-    >
-      Fourth slide
-    </div>
+    First slide
   </div>
-</div>
+  <div
+    key="1"
+  >
+    Second slide
+  </div>
+  <div
+    key="2"
+  >
+    Third slide
+  </div>
+  <div
+    key="3"
+  >
+    Fourth slide
+  </div>
+</UnevenItemsScrollSlider>
 `;

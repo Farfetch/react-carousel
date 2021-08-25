@@ -11,6 +11,9 @@ const mockContextCarousel = {
     itemsLength: 1,
     setItemsLength: jest.fn(),
     goTo: jest.fn(),
+    containerRef: {
+        current: null,
+    },
 };
 
 const mockChildren = <div />;

@@ -1,17 +1,100 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<SwipeSliderContainer/> should render correctly 1`] = `
-<SwipeSlider
-  activeItem={1}
-  disableSwipe={false}
-  goNext={[MockFunction]}
-  goPrev={[MockFunction]}
-  hasKeysNavigation={true}
-  isInfinite={false}
-  isRTL={false}
-  itemsToShow={2}
-  setItemsLength={[MockFunction]}
->
-  <div />
-</SwipeSlider>
+<SwipeSliderContainer>
+  <ForwardRef(SwipeSliderForwardingRef)
+    activeItem={1}
+    goNext={[MockFunction]}
+    goPrev={[MockFunction]}
+    isInfinite={false}
+    isRTL={false}
+    itemsToShow={2}
+    setItemsLength={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            1,
+          ],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      }
+    }
+  >
+    <SwipeSlider
+      activeItem={1}
+      containerRef={
+        Object {
+          "current": <div
+            class="slider"
+            style="transform: translate3d(-50%, 0, 0);"
+          >
+            <div
+              class="slide"
+              style="width: 50.000000%;"
+            />
+          </div>,
+        }
+      }
+      disableSwipe={false}
+      goNext={[MockFunction]}
+      goPrev={[MockFunction]}
+      hasKeysNavigation={true}
+      isInfinite={false}
+      isRTL={false}
+      itemsToShow={2}
+      setItemsLength={
+        [MockFunction] {
+          "calls": Array [
+            Array [
+              1,
+            ],
+          ],
+          "results": Array [
+            Object {
+              "type": "return",
+              "value": undefined,
+            },
+          ],
+        }
+      }
+    >
+      <reactSwipeEvents
+        nodeName="div"
+        threshold={10}
+      >
+        <div
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+        >
+          <div
+            className="slider"
+            onTransitionEnd={[Function]}
+            style={
+              Object {
+                "transform": "translate3d(-50%, 0, 0)",
+                "transition": "",
+              }
+            }
+          >
+            <div
+              className="slide"
+              key="null/.0"
+              style={
+                Object {
+                  "width": "50.000000%",
+                }
+              }
+            />
+          </div>
+        </div>
+      </reactSwipeEvents>
+    </SwipeSlider>
+  </ForwardRef(SwipeSliderForwardingRef)>
+</SwipeSliderContainer>
 `;

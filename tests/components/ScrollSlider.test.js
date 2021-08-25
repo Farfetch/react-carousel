@@ -1,8 +1,8 @@
+import { ScrollSlider } from '../../src/components/ScrollSlider';
 import { animateScroll } from '../../src/utils';
 import { createSerializer } from 'enzyme-to-json';
 import { shallow } from 'enzyme';
-import React from 'react';
-import ScrollSlider from '../../src/components/ScrollSlider';
+import React, { createRef } from 'react';
 
 jest.mock('../../src/utils/animate', () => ({
     __esModule: true,
@@ -27,6 +27,7 @@ const mockRequiredProps = {
     itemsToShow: 2,
     setItemsLength: jest.fn(),
     goTo: jest.fn(),
+    containerRef: createRef(),
 };
 
 describe('<ScrollSlider />', () => {
@@ -118,12 +119,12 @@ describe('<ScrollSlider />', () => {
             expect(animateScroll).toHaveBeenCalledTimes(0);
         });
 
-        it('should request animation frame when containerRef is defined', () => {
+        it.only('should request animation frame when containerRef is defined', () => {
             const wrapper = shallow(<ScrollSlider {...mockRequiredProps} />);
 
             const instance = wrapper.instance();
 
-            instance.containerRef.current = {
+            mockRequiredProps.containerRef.current = {
                 offsetWidth: 100,
                 scrollLeft: 1,
             };
@@ -140,7 +141,7 @@ describe('<ScrollSlider />', () => {
 
             const instance = wrapper.instance();
 
-            instance.containerRef.current = {
+            mockRequiredProps.containerRef.current = {
                 offsetWidth: 100,
                 scrollLeft: 1,
             };
@@ -173,7 +174,7 @@ describe('<ScrollSlider />', () => {
 
             const instance = wrapper.instance();
 
-            instance.containerRef.current = {
+            mockRequiredProps.containerRef.current = {
                 style: {
                     overflow: 'dummy',
                 },
@@ -181,12 +182,16 @@ describe('<ScrollSlider />', () => {
 
             instance._forceScrollSnapStop(50, 1);
 
-            expect(instance.containerRef.current.style.overflow).toBe('hidden');
+            expect(mockRequiredProps.containerRef.current.style.overflow).toBe(
+                'hidden'
+            );
             expect(instance.isPreventingScroll).toBe(true);
 
             jest.runAllTimers();
 
-            expect(instance.containerRef.current.style.overflow).toBe('');
+            expect(mockRequiredProps.containerRef.current.style.overflow).toBe(
+                ''
+            );
             expect(instance.isPreventingScroll).toBe(false);
             expect(mockRequiredProps.goTo).toHaveBeenCalledTimes(1);
             expect(mockRequiredProps.goTo).toHaveBeenCalledWith(1);
@@ -204,7 +209,7 @@ describe('<ScrollSlider />', () => {
 
             const instance = wrapper.instance();
 
-            instance.containerRef.current = {
+            mockRequiredProps.containerRef.current = {
                 offsetWidth: 100,
                 scrollLeft: 1,
             };
@@ -220,7 +225,7 @@ describe('<ScrollSlider />', () => {
 
             const instance = wrapper.instance();
 
-            instance.containerRef.current = {
+            mockRequiredProps.containerRef.current = {
                 offsetWidth: 100,
                 scrollLeft: 51,
             };
@@ -238,7 +243,7 @@ describe('<ScrollSlider />', () => {
 
             const instance = wrapper.instance();
 
-            instance.containerRef.current = {
+            mockRequiredProps.containerRef.current = {
                 offsetWidth: 100,
                 scrollLeft: 51,
             };
@@ -313,7 +318,7 @@ describe('<ScrollSlider />', () => {
 
             const instance = wrapper.instance();
 
-            instance.containerRef.current = {
+            mockRequiredProps.containerRef.current = {
                 offsetWidth: 100,
                 scrollLeft: 100,
             };
@@ -336,7 +341,7 @@ describe('<ScrollSlider />', () => {
 
             const instance = wrapper.instance();
 
-            instance.containerRef.current = {
+            mockRequiredProps.containerRef.current = {
                 offsetWidth: 100,
                 scrollLeft: 100,
             };
@@ -363,7 +368,7 @@ describe('<ScrollSlider />', () => {
 
             const instance = wrapper.instance();
 
-            instance.containerRef.current = {
+            mockRequiredProps.containerRef.current = {
                 offsetWidth: 100,
                 scrollLeft: -100,
             };
@@ -393,7 +398,7 @@ describe('<ScrollSlider />', () => {
 
             const instance = wrapper.instance();
 
-            instance.containerRef.current = {
+            mockRequiredProps.containerRef.current = {
                 offsetWidth: 100,
                 scrollLeft: 1,
             };
