@@ -1,0 +1,54 @@
+.area {
+    max-width: 100%;
+}
+
+.area-small {
+    max-width: 50%;
+}
+
+.item {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    text-decoration: none;
+    color: white;
+}
+
+.item p {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 200px;
+    font-weight: bold;
+    line-height: 0;
+}
+
+.item > * {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.first {
+    background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+}
+
+.second {
+    background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+}
+
+.third {
+    background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+}
+
+.fourth {
+    background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);
+}
+
+.fifth {
+    background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+}
+
+.sixth {
+    background-image: linear-gradient(120deg, #667eea 0%, #764ba2 100%);
+}
+
+.seventh {
+    background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
+}
