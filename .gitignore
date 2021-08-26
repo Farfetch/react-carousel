@@ -1,7 +1,7 @@
 node_modules/
 *.log
 coverage/
-
+storybook-static/
 packages/*/es/
 packages/*/lib/
 packages/*/coverage/
