@@ -341,6 +341,7 @@ A React Context for the [`Carousel`](#Carousel), following the Context API.
 | goTo              | Func   | Move the carousel to an specific index. Arguments: (newIndex: Number - The new active item, options: Object - To be passed the onAfterChange callback) |
 | goNext            | Func   | Move to the next item, if possible. Arguments: (options: Object - To be passed the onAfterChange callback)                                             |
 | goPrev            | Func   | Move to the previous item, if possible. Arguments: (options: Object - To be passed the onAfterChange callback)                                         |
+| containerRef | Object | Component reference that can be used throughout the Carousel from the context |
 
 
 ### <a name="CarouselProvider"></a>CarouselProvider
