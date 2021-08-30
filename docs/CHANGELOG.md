@@ -1,3 +1,11 @@
+## [1.3.0](https://github.com/Farfetch/react-carousel/compare/v1.2.0...v1.3.0) (2021-08-30)
+
+
+### Features
+
+* **carousel:** add storybook ([b2e0399](https://github.com/Farfetch/react-carousel/commit/b2e0399595f60cfa93bafadd949153021823b5a1))
+* add containers ref on context - containerRef ([9cc2d2e](https://github.com/Farfetch/react-carousel/commit/9cc2d2eb102c874094097497d00b1331c5517a7a))
+
 ## [1.2.0](https://github.com/Farfetch/react-carousel/compare/v1.1.0...v1.2.0) (2021-07-08)
 
 
