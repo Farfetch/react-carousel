@@ -61,13 +61,26 @@ class CarouselProvider extends Component {
     }
 
     _getDirection(newActiveItem, activeItem = this.state.activeItem) {
-        const lastItem = this.state.itemsLength - 1;
+        const { isInfinite, direction, itemsLength } = this.state;
+        const lastItem = itemsLength - 1;
 
-        if (newActiveItem === 0 && lastItem === activeItem) {
+        // Going from last to first
+        if (
+            isInfinite &&
+            newActiveItem === 0 &&
+            lastItem === activeItem &&
+            direction === 'next'
+        ) {
             return 'next';
         }
 
-        if (activeItem === 0 && newActiveItem === lastItem) {
+        // Going from first to last
+        if (
+            isInfinite &&
+            activeItem === 0 &&
+            newActiveItem === lastItem &&
+            direction === 'prev'
+        ) {
             return 'prev';
         }
 

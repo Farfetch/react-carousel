@@ -671,9 +671,9 @@ describe('<CarouselProvider/>', () => {
             expect(result).toBe(prevDirection);
         });
 
-        test('should return prev if new active item is the last item of items', () => {
+        test('should return next when is infinite and user moves in next direction while at the end of the carousel', () => {
             const wrapper = shallow(
-                <CarouselProvider>
+                <CarouselProvider isInfinite>
                     <MockComponent />
                 </CarouselProvider>
             );
@@ -681,28 +681,28 @@ describe('<CarouselProvider/>', () => {
             const instance = wrapper.instance();
 
             instance._setItemsLength(2);
-            instance._setActiveItem(0);
-
-            const result = instance._getDirection(1);
-
-            expect(result).toBe(prevDirection);
-        });
-
-        test('should return next if new active item is the first item of items', () => {
-            const wrapper = shallow(
-                <CarouselProvider>
-                    <MockComponent />
-                </CarouselProvider>
-            );
-
-            const instance = wrapper.instance();
-
-            instance._setItemsLength(2);
+            instance._goNext();
             instance._setActiveItem(1);
-
             const result = instance._getDirection(0);
 
             expect(result).toBe(nextDirection);
+        });
+
+        test('should return prev when is infinite and user moves in prev direction while at the start of the carousel', () => {
+            const wrapper = shallow(
+                <CarouselProvider isInfinite>
+                    <MockComponent />
+                </CarouselProvider>
+            );
+
+            const instance = wrapper.instance();
+
+            instance._setItemsLength(2);
+            instance._goPrev();
+            instance._setActiveItem(0);
+            const result = instance._getDirection(1);
+
+            expect(result).toBe(prevDirection);
         });
     });
 
