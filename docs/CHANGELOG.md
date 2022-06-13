@@ -1,3 +1,10 @@
+### [1.3.1](https://github.com/Farfetch/react-carousel/compare/v1.3.0...v1.3.1) (2022-06-13)
+
+
+### Bug Fixes
+
+* **carousel:** fix problem with direction when there are only two images ([7d1954c](https://github.com/Farfetch/react-carousel/commit/7d1954cc203a37a09cbd3aa51181b4d628d96a99))
+
 ## [1.3.0](https://github.com/Farfetch/react-carousel/compare/v1.2.0...v1.3.0) (2021-08-30)
 
 
